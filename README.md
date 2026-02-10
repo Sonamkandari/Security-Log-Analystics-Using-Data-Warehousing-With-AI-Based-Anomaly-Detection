@@ -1,12 +1,12 @@
-# 🔐 Security Log Analytics Using Data Warehousing & AI
+#  Security Log Analytics Using Data Warehousing & AI
 
 > A capstone project focused on security login analytics using data warehousing and AI-based anomaly detection  
-> **Status:** 🚧 Work in Progress  
+> **Status:**  Work in Progress  
 > **Current Phase:** Bronze Layer Completed
 
 ---
 
-## 👋 About the Project
+##  About the Project
 
 This project aims to build a **security log analytics system** that helps identify suspicious and abnormal login behavior using a combination of **data warehousing, analytics, and basic AI models**.
 
@@ -30,11 +30,9 @@ The long-term objective of this project is to:
 - Automatically flag suspicious or abnormal login patterns  
 - Visualize insights using dashboards and charts  
 
-This project is part of the **B.Tech CSE Capstone Project (8th Semester, 2026)** and uses publicly available authentication log data :contentReference[oaicite:1]{index=1}.
-
 ---
 
-## 🏗️ Architecture Overview (Medallion Approach)
+##  Architecture Overview (Medallion Approach)
 
 The project follows the **Medallion Architecture**, which helps keep data reliable, traceable, and scalable.
 
@@ -61,7 +59,7 @@ The setup script:
   - `silver`
   - `gold`
 
-⚠️ **Important Note**  
+ **Important Note**  
 Running the setup script will permanently delete the existing database and all its data.  
 It’s meant for development/testing purposes.
 
@@ -95,7 +93,7 @@ All columns are intentionally stored as `VARCHAR`.
 
 ---
 
-## ⚙️ Loading Data into Bronze Layer
+##  Loading Data into Bronze Layer
 
 ### Stored Procedure
 
