@@ -1,26 +1,44 @@
-# Security-Log-Analystics-Using-Data-Warehousing-With-AI-Based-Anomaly-Detection
+# 🔐 Security Log Analytics Using Data Warehousing & AI
 
-# 🔐 SecurityLogsDW
-
-> A SQL Server data warehouse project for ingesting and organizing security login logs  
-> **Status:** 🚧 Work in Progress (Bronze Layer Completed)
-
----
-
-## 👋 About This Project
-
-**SecurityLogsDW** is a hands-on data warehouse project where I’m building a system to store and later analyze **login attempt security logs**.
-
-The idea behind this project is simple:
-start with raw data, store it safely, and then gradually transform it into something meaningful using a **Bronze → Silver → Gold (Medallion Architecture)** approach.
-
-Right now, the focus is on building a strong foundation — database setup and raw data ingestion.
+> A capstone project focused on security login analytics using data warehousing and AI-based anomaly detection  
+> **Status:** 🚧 Work in Progress  
+> **Current Phase:** Bronze Layer Completed
 
 ---
 
-## 🏗️ Architecture Approach
+## 👋 About the Project
 
-This project follows the Medallion Architecture pattern:
+This project aims to build a **security log analytics system** that helps identify suspicious and abnormal login behavior using a combination of **data warehousing, analytics, and basic AI models**.
+
+Modern systems generate massive volumes of authentication logs, making manual analysis impractical. This project addresses that problem by storing login data in a structured **data warehouse** and gradually transforming it into analytics-ready datasets that can be used to detect potential security threats such as:
+- Repeated failed login attempts  
+- Suspicious IP addresses  
+- Unusual login times  
+- Possible account takeover behavior  
+
+At the moment, the project focuses on building a **strong data foundation** by ingesting raw login data into the **Bronze layer** of the warehouse.
+
+---
+
+## 🎯 Project Objective
+
+The long-term objective of this project is to:
+
+- Design a layered data warehouse for security logs  
+- Clean and standardize login data for analysis  
+- Apply basic AI / anomaly detection techniques to learn normal login behavior  
+- Automatically flag suspicious or abnormal login patterns  
+- Visualize insights using dashboards and charts  
+
+This project is part of the **B.Tech CSE Capstone Project (8th Semester, 2026)** and uses publicly available authentication log data :contentReference[oaicite:1]{index=1}.
+
+---
+
+## 🏗️ Architecture Overview (Medallion Approach)
+
+The project follows the **Medallion Architecture**, which helps keep data reliable, traceable, and scalable.
+
+
 ---
 <img width="1367" height="602" alt="image" src="https://github.com/user-attachments/assets/fae5fe61-212e-4b42-8edb-461e80690fac" />
 
