@@ -20,7 +20,7 @@ At the moment, the project focuses on building a **strong data foundation** by i
 
 ---
 
-## 🎯 Project Objective
+##  Project Objective
 
 The long-term objective of this project is to:
 
@@ -46,7 +46,7 @@ Only the **Bronze layer** is implemented so far.
 
 ---
 
-## 🗄️ Database Setup
+##  Database Setup
 
 - **Database Name:** `SecurityLogsDW`
 - **Platform:** Microsoft SQL Server
@@ -65,7 +65,7 @@ It’s meant for development/testing purposes.
 
 ---
 
-## 📥 Bronze Layer – Raw Login Data
+##  Bronze Layer – Raw Login Data
 <img width="710" height="604" alt="image" src="https://github.com/user-attachments/assets/91c6a24b-21f3-4215-a225-87ec55e43bf3" />
 
 ### Table: `bronze.login_attempts`
