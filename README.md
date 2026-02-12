@@ -112,4 +112,180 @@ This stored procedure handles the raw data load process:
 ### How to Run
 ```sql
 EXEC bronze.usp_load_login_attempts;
+```
+---
+---
 
+## Silver Layer – Data Cleaning and Standardization
+
+### Overview
+
+The Silver layer is responsible for transforming raw login data from the Bronze layer into clean, validated, and structured data.  
+This layer focuses on improving data quality and enforcing consistency so that the data can be reliably used for analytics and AI-based anomaly detection.
+
+Unlike the Bronze layer, which stores data exactly as received, the Silver layer applies controlled transformations while still preserving the original meaning of the data.
+
+---
+
+### Purpose of the Silver Layer
+
+The Silver layer was designed to:
+
+- Convert raw string values into appropriate data types
+- Remove invalid and inconsistent values
+- Standardize text-based fields
+- Validate logical consistency of security flags
+- Extract structured features from browser-related data
+- Prepare data for aggregation and modeling in the Gold layer
+
+---
+
+### Silver Layer Architecture
+
+Bronze (Raw Data) → Silver (Cleaned and Structured Data)
+
+> **Add Silver Layer Data Flow Diagram Here**  
+> (Diagram should show Bronze table feeding into Silver transformations)
+
+---
+
+### Table: `silver.login_attempts`
+
+The Silver table stores cleaned and validated login data with proper data types.
+
+| Column Name | Data Type | Description |
+|------------|----------|-------------|
+| login_time | TIME | Converted login timestamp |
+| rtt_ms | INT | Cleaned network round-trip time |
+| ip_address | VARCHAR | Trimmed IP address |
+| country | VARCHAR | Standardized country code |
+| region | VARCHAR | Cleaned region |
+| city | VARCHAR | Cleaned city |
+| asn | INT | Converted ASN |
+| browser_name | VARCHAR | Cleaned browser string |
+| browser_family | VARCHAR | Extracted browser family |
+| browser_version | VARCHAR | Extracted browser version |
+| os_name | VARCHAR | Validated operating system |
+| device_type | VARCHAR | Normalized device type |
+| login_successful | BIT | Login success indicator |
+| is_attack_ip | BIT | Suspicious IP indicator |
+| is_account_takeover | BIT | Account takeover indicator |
+
+---
+
+## Silver Layer Transformations
+
+### 1. Timestamp Conversion
+
+The original login timestamp was stored as text.  
+It was converted into SQL `TIME` format for consistency.
+
+```sql
+TRY_CONVERT(TIME, '00:' + login_timestamp)
+```
+
+### 2. RTT (Round Trip Time) Cleaning
+> Invalid RTT values such as NaN were handled safely.
+```
+TRY_CONVERT(INT, NULLIF(rtt_ms, 'NaN'))
+```
+### 3. Text Field Cleaning
+> Leading and trailing spaces were removed from all relevant text columns.
+```
+NULLIF(LTRIM(RTRIM(column_name)), '')
+
+```
+### 4. Country Standardization
+> Country codes were standardized to uppercase to avoid case mismatches.
+```
+UPPER(NULLIF(LTRIM(RTRIM(country)), ''))
+```
+
+### 5. Region and City Cleaning
+> Region and city values were cleaned without altering their meaning.
+```
+NULLIF(LTRIM(RTRIM(region)), '')
+NULLIF(LTRIM(RTRIM(city)), '')
+
+```
+### 6. ASN Conversion
+> ASN values were converted from text to integer format.
+```
+TRY_CONVERT(INT, asn)
+```
+### 7. Browser Data Structuring
+> Browser information was preserved and enriched by extracting structured components.
+```
+NULLIF(LTRIM(RTRIM(browser_name)), '')
+
+```
+- Browser Family Extraction
+```
+CASE 
+    WHEN browser_name LIKE 'Chrome%' THEN 'Chrome'
+    WHEN browser_name LIKE 'Firefox%' THEN 'Firefox'
+    WHEN browser_name LIKE 'Safari%' THEN 'Safari'
+    WHEN browser_name LIKE 'Edge%' THEN 'Edge'
+    ELSE 'Other'
+END
+
+```
+- Browser Version Extraction
+```
+CASE 
+    WHEN CHARINDEX(' ', browser_name) > 0
+    THEN RIGHT(browser_name, 
+               CHARINDEX(' ', REVERSE(browser_name)) - 1)
+    ELSE NULL
+END
+
+```
+- Browser Transformation Diagram
+
+---
+### 8. Operating System Validation
+> The os_name column contained invalid numeric-only values (e.g., 134).
+Such values were removed to prevent invalid OS data.
+
+```
+CASE 
+    WHEN LTRIM(RTRIM(os_name)) NOT LIKE '%[A-Za-z]%' THEN NULL
+    ELSE NULLIF(LTRIM(RTRIM(os_name)), '')
+END
+
+```
+### 9. Device Type Normalization
+> Device type values were standardized to lowercase.
+```
+LOWER(NULLIF(LTRIM(RTRIM(device_type)), ''))
+```
+### 10. Security Flag Validation
+> Login-related flags were converted into BIT values.
+```
+CASE 
+    WHEN login_successful = '1' THEN 1
+    WHEN login_successful = '0' THEN 0
+    ELSE NULL
+END
+
+```
+- The same logic was applied to:
+### is_attack_ip
+### is_account_takeover
+- Logical checks were performed to ensure no inconsistent combinations exist.
+---
+## Loading Data into the Silver Layer
+### Stored Procedure
+- The Silver layer is populated using the following stored procedure:
+```
+EXEC silver.load_silver;
+```
+---
+## This stored procedure performs the following actions:
+
+- Truncates the Silver table before each load  
+- Cleans and transforms data from the Bronze layer  
+- Validates column values and data types  
+- Extracts structured features (such as browser family and version)  
+- Handles errors using `TRY...CATCH` blocks  
+- Tracks execution time for monitoring and debugging  
