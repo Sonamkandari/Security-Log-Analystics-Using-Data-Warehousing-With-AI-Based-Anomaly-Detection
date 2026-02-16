@@ -60,4 +60,24 @@ CREATE TABLE bronze.login_attempts (
     is_account_takeover VARCHAR(50)
 );
 
+if object_id('bronze.login_attempts','U') is not null
+drop table bronze.intrusion_events;
+GO
+
+CREATE TABLE bronze.intrusion_events (
+    timestamp         VARCHAR(MAX),
+    ip_address        VARCHAR(MAX),
+    protocol          VARCHAR(MAX),
+    attack_type       VARCHAR(MAX),
+    severity          VARCHAR(MAX),
+    intrusion_flag    VARCHAR(MAX),
+    packet_size       VARCHAR(MAX),
+    src_port          VARCHAR(MAX),
+    dst_port          VARCHAR(MAX)
+);
+GO
+
+
+
+
 
