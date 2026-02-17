@@ -1,5 +1,4 @@
 /*
-
 ============================================
 Create database and schemas
 ============================================
@@ -60,20 +59,21 @@ CREATE TABLE bronze.login_attempts (
     is_account_takeover VARCHAR(50)
 );
 
-if object_id('bronze.login_attempts','U') is not null
-drop table bronze.intrusion_events;
+IF OBJECT_ID('bronze.intrusion_detection', 'U') IS NOT NULL
+    DROP TABLE bronze.intrusion_detection;
 GO
-
-CREATE TABLE bronze.intrusion_events (
-    timestamp         VARCHAR(MAX),
-    ip_address        VARCHAR(MAX),
-    protocol          VARCHAR(MAX),
-    attack_type       VARCHAR(MAX),
-    severity          VARCHAR(MAX),
-    intrusion_flag    VARCHAR(MAX),
-    packet_size       VARCHAR(MAX),
-    src_port          VARCHAR(MAX),
-    dst_port          VARCHAR(MAX)
+CREATE TABLE bronze.intrusion_detection (
+    session_id            VARCHAR(MAX),
+    network_packet        VARCHAR(MAX),
+    protocol_type         VARCHAR(MAX),
+    login_attempts        VARCHAR(MAX),
+    session_duration      VARCHAR(MAX),
+    encryption_used       VARCHAR(MAX),
+    ip_reputation_score   VARCHAR(MAX),
+    failed_logins         VARCHAR(MAX),
+    browser_type          VARCHAR(MAX),
+    unusual_time_access   VARCHAR(MAX),
+    attack_detected       VARCHAR(MAX)
 );
 GO
 
