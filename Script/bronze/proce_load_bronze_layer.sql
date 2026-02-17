@@ -31,14 +31,14 @@ BEGIN
         );
 
         PRINT '-----------------------------------------';
-        PRINT 'Loading intrution_events table';
+        PRINT 'Loading bronze.intrusion_detection';
         PRINT '-----------------------------------------';
 
         PRINT '>> Truncating table: bronze.intrution_events';
-        TRUNCATE TABLE bronze.intrusion_events;
+        TRUNCATE TABLE bronze.intrusion_detection;
 
         PRINT '>> Inserting data into: bronze.intrution_events';
-        BULK INSERT bronze.intrusion_events
+        BULK INSERT bronze.intrusion_detection
         FROM 'C:\data\cybersecurity_intrusion_data.csv'
         WITH (
             FIRSTROW = 2,
@@ -71,4 +71,4 @@ EXEC bronze.usp_load_login_attempts;
 SELECT COUNT(*) FROM bronze.login_attempts;
 
 Select * from  bronze.login_attempts;
-Select * from bronze.intrusion_events;
+Select * from bronze.intrusion_detection;
