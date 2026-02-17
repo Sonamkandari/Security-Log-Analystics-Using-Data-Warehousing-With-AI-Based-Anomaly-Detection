@@ -1,5 +1,4 @@
 
-
 /*
 what i had done here
 ============================================================================
@@ -35,17 +34,23 @@ Stored Procedure: Load Silver Layer (Bronze -> Silver)
 This procedure performs ETL from Bronze to Silver layer.
 ============================================================================
 */
-use SecurityLogsDW;
 
-go
-CREATE OR ALTER PROCEDURE silver.load_silver 
+USE SecurityLogsDW;
+GO
+
+CREATE OR ALTER PROCEDURE silver.load_silver
 AS
-BEGIN 
-    -- Duration tracking
-    DECLARE @start_time DATETIME,
-            @end_time DATETIME,
-            @batch_start_time DATETIME,
-            @batch_end_time DATETIME;
+BEGIN
+    SET NOCOUNT ON;
+
+    -- =====================================================
+    -- Variable Declarations (MUST BE FIRST)
+    -- =====================================================
+    DECLARE 
+        @start_time        DATETIME,
+        @end_time          DATETIME,
+        @batch_start_time  DATETIME,
+        @batch_end_time    DATETIME;
 
     SET @batch_start_time = GETDATE();
 
@@ -55,20 +60,16 @@ BEGIN
         PRINT 'Loading Silver Layer';
         PRINT '==================================';
 
-        PRINT '-----------------------------------------------------------------------------------';
-        PRINT 'Inserting cleaned data into silver layer from Bronze layer (login_attempts)';
-        PRINT '-----------------------------------------------------------------------------------';
+        /* =====================================================
+           PART 1: Silver.login_attempts
+        ===================================================== */
 
-        -- Truncate silver table
         PRINT '>> Truncating Table: silver.login_attempts';
         TRUNCATE TABLE silver.login_attempts;
 
-        PRINT '>> Inserting Data Into: silver.login_attempts';
-
         SET @start_time = GETDATE();
 
-        -- Insert cleaned data
-           INSERT INTO silver.login_attempts(
+        INSERT INTO silver.login_attempts (
             login_time,
             rtt_ms,
             ip_address,
@@ -84,31 +85,15 @@ BEGIN
             login_successful,
             is_attack_ip,
             is_account_takeover
-    )
-
+        )
         SELECT 
-            -- Fix timestamp (MM:SS.ms ? HH:MM:SS.ms)
             TRY_CONVERT(TIME, '00:' + login_timestamp),
-
-            -- Clean RTT
             TRY_CONVERT(INT, NULLIF(rtt_ms, 'NaN')),
-
-            -- Clean IP
             NULLIF(LTRIM(RTRIM(ip_address)), ''),
-
-            -- Clean Country (keep ISO code)
             UPPER(NULLIF(LTRIM(RTRIM(country)), '')),
-
-            -- Clean Region
             NULLIF(LTRIM(RTRIM(region)), ''),
-
-            -- Clean City
             NULLIF(LTRIM(RTRIM(city)), ''),
-
-            -- Convert ASN to INT
             TRY_CONVERT(INT, asn),
-
-            -- Browser Family
             NULLIF(LTRIM(RTRIM(browser_name)), ''),
             CASE 
                 WHEN browser_name LIKE 'Chrome%' THEN 'Chrome'
@@ -117,70 +102,107 @@ BEGIN
                 WHEN browser_name LIKE 'Edge%' THEN 'Edge'
                 ELSE 'Other'
             END,
-
-            -- Browser Version
-               CASE 
+            CASE 
                 WHEN CHARINDEX(' ', browser_name) > 0
-                THEN RIGHT(browser_name, 
-                           CHARINDEX(' ', REVERSE(browser_name)) - 1)
+                THEN RIGHT(browser_name, CHARINDEX(' ', REVERSE(browser_name)) - 1)
                 ELSE NULL
             END,
-
-            -- 1??1?? Validated OS Name (remove numeric-only garbage like 134)
             CASE 
                 WHEN TRY_CONVERT(INT, LTRIM(RTRIM(os_name))) IS NOT NULL THEN NULL
                 ELSE NULLIF(LTRIM(RTRIM(os_name)), '')
             END,
-
-            -- 1??2?? Clean Device Type
             LOWER(NULLIF(LTRIM(RTRIM(device_type)), '')),
-
             CASE WHEN login_successful = '1' THEN 1
                  WHEN login_successful = '0' THEN 0
                  ELSE NULL END,
-
             CASE WHEN is_attack_ip = '1' THEN 1
                  WHEN is_attack_ip = '0' THEN 0
                  ELSE NULL END,
-
             CASE WHEN is_account_takeover = '1' THEN 1
                  WHEN is_account_takeover = '0' THEN 0
                  ELSE NULL END
-
         FROM bronze.login_attempts;
 
         SET @end_time = GETDATE();
+        PRINT '>> login_attempts load time: '
+              + CAST(DATEDIFF(SECOND, @start_time, @end_time) AS NVARCHAR)
+              + ' seconds';
 
-        PRINT '>> Load Duration: ' 
+        /* =====================================================
+           PART 2: Silver.intrusion_detection
+        ===================================================== */
+
+        PRINT '>> Truncating Table: silver.intrusion_detection';
+        TRUNCATE TABLE silver.intrusion_detection;
+
+        SET @start_time = GETDATE();
+
+        INSERT INTO silver.intrusion_detection (
+            session_id,
+            network_packet,
+            protocol_type,
+            login_attempts,
+            session_duration,
+            encryption_used,
+            ip_reputation_score,
+            failed_logins,
+            browser_type,
+            unusual_time_access,
+            attack_detected,
+            source_system
+        )
+        SELECT
+            NULLIF(LTRIM(RTRIM(session_id)), ''),
+            TRY_CONVERT(INT, network_packet),
+            UPPER(NULLIF(LTRIM(RTRIM(protocol_type)), '')),
+            TRY_CONVERT(INT, login_attempts),
+            TRY_CONVERT(DECIMAL(18,6), session_duration),
+            CASE 
+                WHEN encryption_used IS NULL THEN NULL
+                WHEN UPPER(LTRIM(RTRIM(encryption_used))) = 'NONE' THEN NULL
+                ELSE UPPER(LTRIM(RTRIM(encryption_used)))
+            END,
+            TRY_CONVERT(DECIMAL(18,6), ip_reputation_score),
+            TRY_CONVERT(INT, failed_logins),
+            CASE 
+                WHEN browser_type IS NULL THEN NULL
+                WHEN UPPER(LTRIM(RTRIM(browser_type))) = 'UNKNOWN' THEN NULL
+                ELSE LTRIM(RTRIM(browser_type))
+            END,
+            CASE 
+                WHEN unusual_time_access = '1' THEN 1
+                WHEN unusual_time_access = '0' THEN 0
+                ELSE NULL
+            END,
+            CASE 
+                WHEN attack_detected = '1' THEN 1
+                WHEN attack_detected = '0' THEN 0
+                ELSE NULL
+            END,
+            'INTRUSION_DETECTION_CSV'
+        FROM bronze.intrusion_detection;
+
+        SET @end_time = GETDATE();
+        PRINT '>> intrusion_detection load time: '
               + CAST(DATEDIFF(SECOND, @start_time, @end_time) AS NVARCHAR)
               + ' seconds';
 
         SET @batch_end_time = GETDATE();
 
-        PRINT '>> ------------------------------';
-        PRINT 'Loading Silver Layer Completed';
-        PRINT '>> Total Load Duration: '
+        PRINT '==================================';
+        PRINT 'Silver Layer Load Completed';
+        PRINT 'Total batch time: '
               + CAST(DATEDIFF(SECOND, @batch_start_time, @batch_end_time) AS NVARCHAR)
               + ' seconds';
-        PRINT '==============================================================';
+        PRINT '==================================';
 
     END TRY
-
     BEGIN CATCH
-
-        PRINT '--------------------------------------------------------------';
-        PRINT 'Error occurred during inserting data into Silver layer';
-        PRINT 'Error Message: ' + ERROR_MESSAGE();
-        PRINT 'Error Number: ' + CAST(ERROR_NUMBER() AS NVARCHAR);
-        PRINT 'Error State: ' + CAST(ERROR_STATE() AS NVARCHAR);
-        PRINT '--------------------------------------------------------------';
-
+        PRINT 'ERROR OCCURRED DURING SILVER LOAD';
+        PRINT ERROR_MESSAGE();
+        THROW;
     END CATCH
 END;
+GO
 
--- EXEC bronze.usp_load_login_attempts;
 EXEC silver.load_silver;
-
-
-
-
