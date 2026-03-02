@@ -1,0 +1,2 @@
+login_hour,total_logins,failed_logins,attack_logins,failure_rate,anomaly_flag,is_anomaly
+0,800003,412893,77324,51.61,1,0
