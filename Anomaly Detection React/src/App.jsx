@@ -1,80 +1,66 @@
-import { useEffect, useState } from "react";
-import Sidebar from "./components/Sidebar";
-import SuggestedQuestions from "./components/SuggestedQuestions";
-import ChatResponse from "./components/ChatResponse";
-import { loadCSV } from "./utils/loadCSV";
+import {useEffect,useState} from "react"
+import {loadCSV} from "./utils/loadCSV"
+import {computeKPI,topCountries,deviceAttackSummary,browserAttackSummary} from "./utils/dataProcessing"
 
-function App() {
-  const [query, setQuery] = useState("");
-  const [data, setData] = useState(null);
+import KPICards from "./components/KPICards"
+import LoginBreakdown from "./components/LoginBreakdown"
+import CountryAttackChart from "./components/CountryAttackChart"
+import {DeviceChart,BrowserChart} from "./components/DeviceCharts"
+import ProtocolAnalysis from "./components/ProtocolAnalysis"
+import HighRiskRegions from "./components/HighRiskRegions"
 
-  // 🔥 NEW: theme state
-  const [theme, setTheme] = useState("dark");
+export default function App(){
 
-  useEffect(() => {
-    document.body.className = theme;
-  }, [theme]);
+  const [timeData,setTime]=useState([])
+  const [geoData,setGeo]=useState([])
+  const [deviceData,setDevice]=useState([])
+  const [sessionData,setSession]=useState([])
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setData({
-        ip: await loadCSV("/data/ip_anomaly_results.csv"),
-        time: await loadCSV("/data/time_anomaly_results.csv"),
-        geo: await loadCSV("/data/geo_anomaly_results.csv"),
-        device: await loadCSV("/data/device_anomaly_results.csv"),
-        session: await loadCSV("/data/session_anomaly_results.csv"),
-      });
-    };
+  useEffect(()=>{
 
-    fetchData();
-  }, []);
+    loadCSV("/data/time_anomaly_results.csv",setTime)
+    loadCSV("/data/geo_anomaly_results.csv",setGeo)
+    loadCSV("/data/device_anomaly_results.csv",setDevice)
+    loadCSV("/data/session_anomaly_results.csv",setSession)
 
-  return (
-    <div className="container">
-      <Sidebar />
+  },[])
 
-      <main className="main-content">
-        {/* Header */}
-        <div className="header">
-          <div>
-            <h1>AI Security Analytics</h1>
-            <p className="subtitle">
-              Isolation Forest–based anomaly detection & explanation
-            </p>
-          </div>
+  const stats=computeKPI(timeData,deviceData,geoData,sessionData)
 
-          <button
-            className="theme-toggle"
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          >
-            {theme === "dark" ? "☀️ Light" : "🌙 Dark"}
-          </button>
+  const countryData=topCountries(geoData)
+  const deviceChart=deviceAttackSummary(deviceData)
+  const browserChart=browserAttackSummary(deviceData)
+
+  return(
+
+    <div className="bg-gray-950 min-h-screen text-gray-200 p-10">
+
+      <div className="max-w-[1600px] mx-auto space-y-8">
+
+        <h1 className="text-4xl font-bold">
+          AI Security Analytics Dashboard
+        </h1>
+
+        <KPICards stats={stats}/>
+
+        <LoginBreakdown data={timeData}/>
+
+        <div className="grid grid-cols-2 gap-6">
+          <CountryAttackChart data={countryData}/>
+          <ProtocolAnalysis data={sessionData}/>
         </div>
 
-        {/* Chat Card */}
-        <div className="chat-card">
-          <SuggestedQuestions setQuery={setQuery} />
-
-          <div className="chat-input">
-            <input
-              type="text"
-              placeholder="Ask a security-related question…"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-            />
-          </div>
-
-          <div className="chat-response">
-            {data && <ChatResponse query={query} data={data} />}
-          </div>
+        <div className="grid grid-cols-2 gap-6">
+          <DeviceChart data={deviceChart}/>
+          <BrowserChart data={browserChart}/>
         </div>
 
-        <footer>
-          🧪 Capstone Project | Security Log Analytics using Isolation Forest
-        </footer>
-      </main>
+        <HighRiskRegions data={geoData}/>
+
+      </div>
+
     </div>
-  );
-}
 
-export default App;
+  )
+
+}
