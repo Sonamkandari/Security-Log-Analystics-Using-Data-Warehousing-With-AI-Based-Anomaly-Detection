@@ -10,7 +10,14 @@ A capstone project focused on building a structured security analytics pipeline 
 **Gold Layer / AI Detection / Dashboard:** In Progress
 
 ---
+## High-Level System Architecture
 
+The following diagram shows the complete end-to-end flow of the project, starting from raw security datasets, moving through the medallion warehouse layers, and finally serving analytical consumers such as dashboards and chatbot systems.
+
+---
+<img width="960" height="367" alt="image" src="https://github.com/user-attachments/assets/2c7f4d22-3ee1-4522-b8d3-3abef414e1c2" />
+
+---
 ##  Project Overview
 
 Modern systems generate extremely large volumes of authentication logs and security events every day.
