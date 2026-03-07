@@ -498,38 +498,335 @@ Silver procedure includes:
 * error handling
 
 ---
+# 🥇 Gold Layer – Analytics and Security Intelligence
 
-## Current Implementation Summary
+## Overview
 
-Implemented:
+The Gold layer transforms cleaned security records from the Silver layer into **analytics-ready security summaries**.
 
-* Database creation
-* Bronze schema
-* Silver schema
-* Bronze load procedure
-* Silver ETL procedure
+Unlike the Silver layer, which focuses on cleaning and validation, the Gold layer focuses on:
 
-In Progress:
+* aggregation
+* security pattern summarization
+* risk scoring
+* feature generation for anomaly detection
 
-* Gold layer
-* anomaly detection
-* dashboard
-* chatbot
+This layer represents the first business-facing analytical layer of the warehouse.
 
 ---
 
-## 🚀 Next Planned Phase
+## Purpose of the Gold Layer
 
-Upcoming work:
+The Gold layer was designed to:
 
-* Gold analytical tables
-* anomaly feature generation
-* AI model integration
+* generate summarized login intelligence
+* identify high-risk IP behavior
+* measure failure rates across dimensions
+* prepare structured outputs for AI anomaly detection
+* support dashboards and chatbot explanations
+
+---
+
+## Gold Layer Data Flow
+
+```text id="n4gr6u"
+Silver Layer
+   ↓
+Gold Analytical Tables
+   ↓
+AI Anomaly Detection
+```
+
+---
+
+## Gold Tables Implemented
+
+The following analytical tables were created in the `gold` schema.
+
+---
+
+## 1. `gold.login_fact`
+
+This is the core analytical fact table for login behavior.
+
+It stores login activity in a flattened analytical structure.
+
+### Columns
+
+| Column Name         | Description           |
+| ------------------- | --------------------- |
+| login_hour          | Extracted login hour  |
+| ip_address          | Login IP              |
+| country             | Country code          |
+| region              | Region                |
+| city                | City                  |
+| browser_family      | Browser family        |
+| os_name             | Operating system      |
+| device_type         | Device type           |
+| login_successful    | Login success flag    |
+| is_attack_ip        | Attack IP flag        |
+| is_account_takeover | Account takeover flag |
+
+---
+
+## Purpose
+
+This table supports flexible downstream analysis such as:
+
+* hourly login patterns
+* region-based analysis
+* device behavior analysis
+
+---
+
+## 2. `gold.login_time_summary`
+
+This table summarizes login behavior by hour.
+
+### Columns
+
+| Column Name   | Description          |
+| ------------- | -------------------- |
+| login_hour    | Hour of login        |
+| total_logins  | Total login attempts |
+| failed_logins | Failed login count   |
+| attack_logins | Attack IP count      |
+| failure_rate  | Failure percentage   |
+
+---
+
+## Purpose
+
+Used to identify:
+
+* unusual login hours
+* high-risk time windows
+* failed login concentration
+
+---
+
+## 3. `gold.ip_risk_summary`
+
+This table summarizes security behavior by IP address.
+
+### Columns
+
+| Column Name     | Description           |
+| --------------- | --------------------- |
+| ip_address      | Login IP              |
+| total_attempts  | Total login attempts  |
+| failed_attempts | Failed attempts       |
+| attack_attempts | Attack IP occurrences |
+| failure_rate    | Failure percentage    |
+| risk_level      | LOW / MEDIUM / HIGH   |
+
+---
+
+## Risk Classification Logic
+
+Risk levels are assigned using login behavior:
+
+* **HIGH** → attack attempts greater than 5
+* **MEDIUM** → failed attempts greater than 5
+* **LOW** → otherwise
+
+---
+
+## Purpose
+
+This table supports:
+
+* suspicious IP identification
+* attack concentration analysis
+
+---
+
+## 4. `gold.geo_risk_summary`
+
+This table summarizes geographic login risk.
+
+### Columns
+
+| Column Name   | Description        |
+| ------------- | ------------------ |
+| country       | Country            |
+| region        | Region             |
+| total_logins  | Total logins       |
+| failed_logins | Failed logins      |
+| attack_logins | Attack logins      |
+| failure_rate  | Failure percentage |
+
+---
+
+## Purpose
+
+Used for:
+
+* country-level risk analysis
+* region-level attack concentration
+
+---
+
+## 5. `gold.device_risk_summary`
+
+This table summarizes device and browser behavior.
+
+### Columns
+
+| Column Name    | Description        |
+| -------------- | ------------------ |
+| device_type    | Device category    |
+| browser_family | Browser family     |
+| total_logins   | Total logins       |
+| failed_logins  | Failed logins      |
+| attack_logins  | Attack logins      |
+| failure_rate   | Failure percentage |
+
+---
+
+## Purpose
+
+Used to detect:
+
+* suspicious device patterns
+* browser-related anomalies
+
+---
+
+## 6. `gold.intrusion_session_summary`
+
+This table summarizes intrusion records by protocol.
+
+### Columns
+
+| Column Name          | Description                            |
+| -------------------- | -------------------------------------- |
+| protocol_type        | TCP / UDP / ICMP                       |
+| total_sessions       | Total sessions                         |
+| avg_session_duration | Average duration                       |
+| avg_failed_logins    | Average failed logins                  |
+| detected_attacks     | Total attacks                          |
+| high_risk_sessions   | Sessions with high IP reputation score |
+
+---
+
+## Purpose
+
+Used for:
+
+* intrusion protocol analysis
+* high-risk session monitoring
+
+---
+
+# Gold Layer Loading Procedure
+
+## Stored Procedure
+
+The Gold layer is populated using:
+
+```sql id="g7mq0l"
+EXEC gold.load_gold;
+```
+
+---
+
+## What the Procedure Performs
+
+The procedure performs:
+
+* truncates existing Gold tables
+* loads analytical summaries from Silver layer
+* calculates failure rates
+* classifies IP risk levels
+* aggregates intrusion sessions
+
+---
+
+## Gold Layer Aggregations Applied
+
+---
+
+## Login Fact Creation
+
+The login hour is extracted from cleaned login time:
+
+```sql id="9wlnd6"
+DATEPART(HOUR, login_time)
+```
+
+---
+
+## Failure Rate Calculation
+
+Failure rates are calculated using:
+
+```sql id="p55y8n"
+ROUND(
+    CAST(SUM(CASE WHEN login_successful = 0 THEN 1 ELSE 0 END) AS FLOAT)
+    / COUNT(*) * 100, 2
+)
+```
+
+---
+
+## IP Risk Classification
+
+Risk level logic:
+
+```sql id="c8pn2x"
+CASE
+    WHEN attack_attempts > 5 THEN 'HIGH'
+    WHEN failed_attempts > 5 THEN 'MEDIUM'
+    ELSE 'LOW'
+END
+```
+
+---
+
+## Intrusion High-Risk Session Detection
+
+High-risk sessions are identified using:
+
+```sql id="vh1r7f"
+ip_reputation_score > 0.7
+```
+
+---
+
+# Gold Layer Validation Queries
+
+Example queries used to verify outputs:
+
+```sql id="1l4r9s"
+SELECT * FROM gold.login_time_summary;
+SELECT * FROM gold.ip_risk_summary;
+SELECT * FROM gold.geo_risk_summary;
+SELECT * FROM gold.device_risk_summary;
+SELECT * FROM gold.intrusion_session_summary;
+```
+
+---
+
+# Current Output of the Gold Layer
+
+At this stage, the warehouse can answer:
+
+* Which login hours are risky
+* Which IPs show repeated failures
+* Which regions have abnormal attack rates
+* Which devices show suspicious behavior
+* Which intrusion protocols are high risk
+
+---
+
+# Next Phase
+
+The Gold layer outputs are now used as input for:
+
+* Isolation Forest anomaly detection
 * dashboard visualization
-* chatbot analytics layer
+* chatbot explanation layer
 
----
 
-## 📄 License
 
-This project is currently under repository license terms.
