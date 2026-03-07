@@ -50,17 +50,53 @@ The project aims to:
 ##  Architecture Overview
 
 The project follows a layered medallion-style data architecture:
-
-```text
-Source Data
-   ↓
-Bronze Layer (Raw Ingestion)
-   ↓
-Silver Layer (Cleaned & Structured Data)
-   ↓
-Gold Layer (Analytics Ready)   [In Progress]
-   ↓
-AI Anomaly Detection           [In Progress]
+```
+Raw Datasets
+   │
+   ├── RBA Login Dataset
+   └── Intrusion Detection Dataset
+           │
+           ↓
+Bronze Layer (Raw SQL Tables)
+   │
+   ├── bronze.login_attempts
+   └── bronze.intrusion_detection
+           │
+           ↓
+Silver Layer (Cleaned SQL Tables)
+   │
+   ├── silver.login_attempts
+   └── silver.intrusion_detection
+           │
+           ↓
+Gold Layer (Analytical Tables)
+   │
+   ├── login_fact
+   ├── login_time_summary
+   ├── ip_risk_summary
+   ├── geo_risk_summary
+   ├── device_risk_summary
+   └── intrusion_session_summary
+           │
+           ↓
+Python AI Layer
+   │
+   └── Isolation Forest
+           │
+           ↓
+Anomaly Output CSV Files
+   │
+   ├── ip anomalies
+   ├── geo anomalies
+   ├── time anomalies
+   ├── device anomalies
+   └── session anomalies
+           │
+           ↓
+Applications
+   │
+   ├── React Dashboard
+   └── Streamlit Chatbot
 ```
 
 ---
