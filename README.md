@@ -144,7 +144,7 @@ Schemas created:
 
 ---
 
-## ⚠ Important Warning
+##  Important Warning
 
 Running the setup script deletes the full existing warehouse database.
 
@@ -498,7 +498,7 @@ Silver procedure includes:
 * error handling
 
 ---
-# 🥇 Gold Layer – Analytics and Security Intelligence
+#  Gold Layer – Analytics and Security Intelligence
 
 ## Overview
 
@@ -820,13 +820,331 @@ At this stage, the warehouse can answer:
 
 ---
 
-# Next Phase
+#  AI Anomaly Detection Layer
 
-The Gold layer outputs are now used as input for:
+## Overview
 
-* Isolation Forest anomaly detection
-* dashboard visualization
-* chatbot explanation layer
+After generating structured analytical outputs in the Gold layer, the next stage of the project applies **AI-based anomaly detection** to identify unusual security behavior.
+
+The anomaly detection layer uses **Isolation Forest**, an unsupervised machine learning algorithm designed to detect rare or abnormal patterns without requiring labeled attack data.
+
+This layer works on top of Gold-layer summaries because Gold tables already contain aggregated risk signals that are suitable for anomaly analysis.
+
+---
+
+## Why Isolation Forest Was Used
+
+Isolation Forest is suitable for this project because:
+
+* it works well on unlabeled security data
+* it isolates rare behavior efficiently
+* it performs well on high-volume security logs
+* it detects anomalies without predefined attack rules
+
+---
+
+## Python Backend
+
+The anomaly detection backend is implemented in:
+
+```text id="o8i6ly"
+Anomaly Detection Backend/
+└── anomaly_detection_gold.py
+```
+
+---
+
+## What the Python Backend Does
+
+The Python script connects anomaly detection with Gold-layer outputs.
+
+It performs the following tasks:
+
+* reads analytical data
+* selects risk features
+* trains Isolation Forest
+* detects anomalies
+* exports anomaly result files
+
+---
+
+## Input Used for AI Detection
+
+The model uses Gold-layer analytical summaries such as:
+
+* login hour summaries
+* IP risk summaries
+* geography summaries
+* device summaries
+* intrusion session summaries
+
+---
+
+## Output Files Generated
+
+The anomaly detection process creates separate output files for each security dimension.
+
+```text id="2p1q9v"
+ip_anomaly_results.csv
+time_anomaly_results.csv
+geo_anomaly_results.csv
+device_anomaly_results.csv
+session_anomaly_results.csv
+```
+
+---
+
+## Meaning of Output Files
+
+Each output file contains:
+
+* original analytical values
+* anomaly label
+* detected abnormal behavior
+
+Typical anomaly output:
+
+* `1` → anomaly detected
+* `0` → normal behavior
+
+---
+
+## Security Questions Answered by AI Layer
+
+The anomaly outputs help answer:
+
+* which IP addresses behave abnormally
+* which login hours are unusual
+* which regions show suspicious activity
+* which devices are uncommon
+* which intrusion sessions are high risk
+
+---
+
+#  React Security Dashboard
+
+## Overview
+
+To make anomaly outputs easier to interpret visually, a React dashboard was developed.
+
+The dashboard reads anomaly result files and converts them into security charts.
+
+---
+
+## Frontend Folder Structure
+
+```text id="8j24w4"
+Anomaly Detection React/
+```
+
+---
+
+## Main Frontend Components
+
+```text id="hqlcb7"
+src/components/
+```
+
+Includes:
+
+* ChartCard.jsx
+* CountryAttackChart.jsx
+* DeviceCharts.jsx
+* HighRiskRegions.jsx
+* KPICards.jsx
+* LoginBreakdown.jsx
+* ProtocolAnalysis.jsx
+
+---
+
+## Dashboard Purpose
+
+The dashboard provides visual answers to:
+
+* where attacks are concentrated
+* which countries are risky
+* which devices fail more
+* which protocols show abnormal activity
+
+---
+
+## KPI Layer
+
+The KPI cards summarize:
+
+* total anomalies
+* suspicious IP count
+* risky sessions
+* attack concentration
+
+---
+
+## Data Source for Dashboard
+
+Dashboard CSV files are stored in:
+
+```text id="o8lmb9"
+public/data/
+```
+
+---
+
+## Files Used
+
+```text id="k2h5rj"
+device_anomaly_results.csv
+geo_anomaly_results.csv
+ip_anomaly_results.csv
+session_anomaly_results.csv
+time_anomaly_results.csv
+```
+
+---
+
+## Frontend Utility Layer
+
+The React project includes utility functions for:
+
+* loading CSV files
+* preprocessing anomaly data
+* feeding chart components
+
+Located in:
+
+```text id="x8k6qg"
+src/utils/
+```
+
+Includes:
+
+* loadCSV.js
+* dataProcessing.js
+
+---
+
+#  AI Security Chatbot
+
+## Overview
+
+A conversational chatbot was added so users can ask security-related questions directly.
+
+This allows anomaly results to be explained in simple language.
+
+---
+
+## Chatbot Location
+
+```text id="g4pkzw"
+Anomaly_Detection/
+└── security_chatbot_app.py
+```
+
+---
+
+## Technology Used
+
+The chatbot is built using:
+
+Streamlit
+
+---
+
+## What the Chatbot Does
+
+The chatbot reads anomaly result files and answers questions such as:
+
+* Show suspicious IPs
+* Which regions are risky?
+* When do attacks happen?
+* Are mobile devices risky?
+* Show session anomalies
+
+---
+
+## Chatbot Logic
+
+The chatbot works by:
+
+* reading anomaly CSV outputs
+* matching user question keywords
+* returning anomaly explanation
+
+---
+
+## Current Chatbot Scope
+
+The chatbot currently supports project-related security questions.
+
+It is designed as an explainable AI layer rather than a general-purpose chatbot.
+
+---
+
+## Example Security Insight
+
+A user can ask:
+
+```text id="3a1z3f"
+Which regions are risky?
+```
+
+The chatbot responds using anomaly output from:
+
+```text id="vduq85"
+geo_anomaly_results.csv
+```
+
+---
+
+#  Repository Structure
+
+Current repository organization:
+
+```text id="2lm0kk"
+SECURITY-LOG-ANALYTICS-USING-DATA-WAREHOUSING-WITH-AI-BASED-ANOMALY-DETECTION
+
+├── Anomaly Detection Backend
+│   └── anomaly_detection_gold.py
+
+├── Anomaly Detection React
+│   ├── public/data/
+│   ├── src/components/
+│   ├── src/utils/
+
+├── Anomaly_Detection
+│   ├── code.ipynb
+│   ├── security_chatbot_app.py
+│   ├── anomaly result csv files
+
+├── Script
+├── Source Data File
+├── Tests
+├── Document
+```
+
+---
+
+#  Current System Capability
+
+At this stage, the full system can:
+
+* ingest raw security logs
+* clean and validate records
+* generate risk summaries
+* detect anomalies using AI
+* visualize threats
+* explain anomalies conversationally
+
+---
+
+#  Next Improvement Areas
+
+Planned future enhancements:
+
+* real-time anomaly scoring
+* SQL-to-Python pipeline automation
+* live dashboard refresh
+* stronger chatbot reasoning
+* API integration
 
 
 
