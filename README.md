@@ -48,6 +48,8 @@ The project aims to:
 ---
 
 ##  Architecture Overview
+<img width="1001" height="440" alt="image" src="https://github.com/user-attachments/assets/4270f32b-9242-48a6-a1f4-35f7f6c0b56c" />
+
 
 The project follows a layered medallion-style data architecture:
 ```
