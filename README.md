@@ -1,17 +1,17 @@
-# 🛡 Security Log Analytics Using Data Warehousing with AI-Based Anomaly Detection
+# Security Log Analytics Using Data Warehousing with AI-Based Anomaly Detection
 
 A capstone project focused on building a structured security analytics pipeline using **SQL-based data warehousing**, **layered transformation architecture**, and **AI-ready security data preparation**.
 
 ---
 
-## 📌 Project Status
+## Project Status
 
 **Current Development Stage:** Bronze Layer + Silver Layer Implemented
 **Gold Layer / AI Detection / Dashboard:** In Progress
 
 ---
 
-## 📖 Project Overview
+##  Project Overview
 
 Modern systems generate extremely large volumes of authentication logs and security events every day.
 Manual analysis of such data is inefficient, slow, and often unreliable when suspicious behavior must be identified quickly.
@@ -34,7 +34,7 @@ The final long-term goal is to support:
 
 ---
 
-## 🎯 Project Objectives
+##  Project Objectives
 
 The project aims to:
 
@@ -47,7 +47,7 @@ The project aims to:
 
 ---
 
-## 🏗 Architecture Overview
+##  Architecture Overview
 
 The project follows a layered medallion-style data architecture:
 
@@ -65,7 +65,7 @@ AI Anomaly Detection           [In Progress]
 
 ---
 
-## 📂 Data Sources
+##  Data Sources
 
 Two datasets are currently integrated into the warehouse.
 
@@ -113,7 +113,7 @@ Used for intrusion event analytics.
 
 ---
 
-## 🗄 Database Setup
+##  Database Setup
 
 Database platform:
 
@@ -178,7 +178,7 @@ CREATE SCHEMA gold;
 
 ---
 
-# 🥉 Bronze Layer – Raw Data Ingestion
+#  Bronze Layer – Raw Data Ingestion
 
 The Bronze layer stores source data exactly as received.
 
@@ -282,7 +282,7 @@ C:\data\cybersecurity_intrusion_data.csv
 
 ---
 
-# 🥈 Silver Layer – Cleaned and Structured Data
+#  Silver Layer – Cleaned and Structured Data
 
 The Silver layer transforms Bronze data into validated structured records.
 
