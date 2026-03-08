@@ -1,14 +1,13 @@
 import Papa from "papaparse";
 
-export const loadCSV = async (path) => {
-  const response = await fetch(path);
-  const text = await response.text();
-
-  return new Promise((resolve) => {
-    Papa.parse(text, {
-      header: true,
-      dynamicTyping: true,
-      complete: (results) => resolve(results.data),
-    });
+export function loadCSV(path, setData) {
+  Papa.parse(path, {
+    download: true,
+    header: true,
+    dynamicTyping: true,
+    complete: (res) => {
+      const clean = res.data.filter((r) => Object.keys(r).length > 1);
+      setData(clean);
+    }
   });
-};
+}

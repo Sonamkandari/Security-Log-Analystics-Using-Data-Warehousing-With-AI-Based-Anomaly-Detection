@@ -1,291 +1,1185 @@
-#  Security Log Analytics Using Data Warehousing & AI
+# Security Log Analytics Using Data Warehousing with AI-Based Anomaly Detection
 
-> A capstone project focused on security login analytics using data warehousing and AI-based anomaly detection  
-> **Status:**  Work in Progress  
-> **Current Phase:** Bronze Layer Completed
+A capstone project focused on building a structured security analytics pipeline using **SQL-based data warehousing**, **layered transformation architecture**, and **AI-ready security data preparation**.
 
 ---
 
-##  About the Project
+## Project Status
 
-This project aims to build a **security log analytics system** that helps identify suspicious and abnormal login behavior using a combination of **data warehousing, analytics, and basic AI models**.
+**Current Development Stage:** Bronze Layer + Silver Layer Implemented
+**Gold Layer / AI Detection / Dashboard:** In Progress
 
-Modern systems generate massive volumes of authentication logs, making manual analysis impractical. This project addresses that problem by storing login data in a structured **data warehouse** and gradually transforming it into analytics-ready datasets that can be used to detect potential security threats such as:
-- Repeated failed login attempts  
-- Suspicious IP addresses  
-- Unusual login times  
-- Possible account takeover behavior  
+---
+## High-Level System Architecture
 
-At the moment, the project focuses on building a **strong data foundation** by ingesting raw login data into the **Bronze layer** of the warehouse.
+The following diagram shows the complete end-to-end flow of the project, starting from raw security datasets, moving through the medallion warehouse layers, and finally serving analytical consumers such as dashboards and chatbot systems.
+
+---
+<img width="2071" height="965" alt="High level Architecture" src="https://github.com/user-attachments/assets/43f26f93-b6a3-42db-8106-3e3d694b7c65" />
+
+---
+##  Project Overview
+
+Modern systems generate extremely large volumes of authentication logs and security events every day.
+Manual analysis of such data is inefficient, slow, and often unreliable when suspicious behavior must be identified quickly.
+
+This project addresses that problem by designing a structured **security data warehouse** that prepares raw security logs for analytics and anomaly detection.
+
+The system uses:
+
+* Layered warehousing architecture
+* SQL-based ETL pipelines
+* Structured transformation logic
+* Security-oriented data validation
+
+The final long-term goal is to support:
+
+* abnormal login detection
+* suspicious IP identification
+* intrusion pattern analytics
+* AI-based anomaly detection
 
 ---
 
-##  Project Objective
+##  Project Objectives
 
-The long-term objective of this project is to:
+The project aims to:
 
-- Design a layered data warehouse for security logs  
-- Clean and standardize login data for analysis  
-- Apply basic AI / anomaly detection techniques to learn normal login behavior  
-- Automatically flag suspicious or abnormal login patterns  
-- Visualize insights using dashboards and charts  
-
----
-
-##  Architecture Overview (Medallion Approach)
-
-The project follows the **Medallion Architecture**, which helps keep data reliable, traceable, and scalable.
-
-
----
-<img width="1367" height="602" alt="image" src="https://github.com/user-attachments/assets/fae5fe61-212e-4b42-8edb-461e80690fac" />
+* Build a multi-layered security data warehouse
+* Integrate multiple security datasets
+* Preserve raw source data safely
+* Standardize login and intrusion data
+* Prepare analytics-ready structured security records
+* Support future anomaly detection models
 
 ---
 
-Only the **Bronze layer** is implemented so far.
+##  Architecture Overview
+<img width="1001" height="440" alt="image" src="https://github.com/user-attachments/assets/4270f32b-9242-48a6-a1f4-35f7f6c0b56c" />
+
+
+The project follows a layered medallion-style data architecture:
+```
+Raw Datasets
+   │
+   ├── RBA Login Dataset
+   └── Intrusion Detection Dataset
+           │
+           ↓
+Bronze Layer (Raw SQL Tables)
+   │
+   ├── bronze.login_attempts
+   └── bronze.intrusion_detection
+           │
+           ↓
+Silver Layer (Cleaned SQL Tables)
+   │
+   ├── silver.login_attempts
+   └── silver.intrusion_detection
+           │
+           ↓
+Gold Layer (Analytical Tables)
+   │
+   ├── login_fact
+   ├── login_time_summary
+   ├── ip_risk_summary
+   ├── geo_risk_summary
+   ├── device_risk_summary
+   └── intrusion_session_summary
+           │
+           ↓
+Python AI Layer
+   │
+   └── Isolation Forest
+           │
+           ↓
+Anomaly Output CSV Files
+   │
+   ├── ip anomalies
+   ├── geo anomalies
+   ├── time anomalies
+   ├── device anomalies
+   └── session anomalies
+           │
+           ↓
+Applications
+   │
+   ├── React Dashboard
+   └── Streamlit Chatbot
+```
+
+---
+
+##  Data Sources
+
+Two datasets are currently integrated into the warehouse.
+
+---
+
+### Dataset 1: Risk-Based Authentication Login Dataset
+
+This dataset contains login activity records.
+
+Main attributes include:
+
+* login timestamp
+* IP address
+* country
+* region
+* city
+* ASN
+* browser name
+* operating system
+* device type
+* login success status
+* attack IP indicator
+* account takeover flag
+
+Used for login security analytics.
+
+---
+
+### Dataset 2: Intrusion Detection Dataset
+
+This dataset contains intrusion session records.
+
+Main attributes include:
+
+* session id
+* protocol type
+* login attempts
+* session duration
+* encryption usage
+* failed logins
+* IP reputation score
+* attack detected flag
+
+Used for intrusion event analytics.
 
 ---
 
 ##  Database Setup
 
-- **Database Name:** `SecurityLogsDW`
-- **Platform:** Microsoft SQL Server
+Database platform:
 
-The setup script:
-- Checks if the database already exists
-- Drops and recreates it if found
-- Creates three schemas:
-  - `bronze`
-  - `silver`
-  - `gold`
+**Microsoft SQL Server**
 
- **Important Note**  
-Running the setup script will permanently delete the existing database and all its data.  
-It’s meant for development/testing purposes.
+Database name:
+
+```sql
+SecurityLogsDW
+```
 
 ---
 
-##  Bronze Layer – Raw Login Data
-<img width="710" height="604" alt="image" src="https://github.com/user-attachments/assets/91c6a24b-21f3-4215-a225-87ec55e43bf3" />
+## Database Initialization
 
-### Table: `bronze.login_attempts`
+The database setup script performs:
 
-The Bronze layer stores login data **exactly as it comes from the source file**, without any transformations.  
-This makes it easier to trace back to the original data if something goes wrong later.
+* existing database detection
+* forced single-user mode if database exists
+* complete database recreation
+* schema creation
 
-All columns are intentionally stored as `VARCHAR`.
+Schemas created:
 
-| Column Name | Description |
-|------------|------------|
-| login_timestamp | Time of login attempt |
-| rtt_ms | Network round-trip time |
-| ip_address | User IP address |
-| country | Country of login |
-| region | Region or state |
-| city | City |
-| asn | Autonomous System Number |
-| browser_name | Browser used |
-| os_name | Operating system |
-| device_type | Device type |
-| login_successful | Login success flag |
-| is_attack_ip | Indicates suspicious IP |
-| is_account_takeover | Account takeover flag |
+* bronze
+* silver
+* gold
 
 ---
 
-##  Loading Data into Bronze Layer
+##  Important Warning
 
-### Stored Procedure
+Running the setup script deletes the full existing warehouse database.
 
+Use only in development or testing environments.
 
-This stored procedure handles the raw data load process:
+---
 
-- Truncates the existing Bronze table
-- Loads fresh data from a CSV file using `BULK INSERT`
-- Skips the header row
-- Uses `TRY...CATCH` blocks for error handling
-- Prints progress messages during execution
+## Database Creation Script
 
-### Source File Location
+```sql
+USE master;
 
+IF EXISTS (SELECT 1 FROM sys.databases WHERE name = 'SecurityLogsDW')
+BEGIN
+    ALTER DATABASE SecurityLogsDW SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+    DROP DATABASE SecurityLogsDW;
+END;
 
-### How to Run
+CREATE DATABASE SecurityLogsDW;
+```
+
+---
+
+## Schema Creation
+
+```sql
+CREATE SCHEMA bronze;
+CREATE SCHEMA silver;
+CREATE SCHEMA gold;
+```
+
+---
+
+#  Bronze Layer – Raw Data Ingestion
+
+The Bronze layer stores source data exactly as received.
+
+No transformations are applied here.
+
+Purpose:
+
+* preserve raw source integrity
+* enable traceability
+* support repeatable ETL
+
+All source fields are intentionally stored as text.
+
+---
+
+## Bronze Tables Implemented
+
+---
+
+### bronze.login_attempts
+
+Stores raw login activity records.
+
+Columns:
+
+* login_timestamp
+* rtt_ms
+* ip_address
+* country
+* region
+* city
+* asn
+* browser_name
+* os_name
+* device_type
+* login_successful
+* is_attack_ip
+* is_account_takeover
+
+---
+
+### bronze.intrusion_detection
+
+Stores raw intrusion session records.
+
+Columns:
+
+* session_id
+* network_packet
+* protocol_type
+* login_attempts
+* session_duration
+* encryption_used
+* ip_reputation_score
+* failed_logins
+* browser_type
+* unusual_time_access
+* attack_detected
+
+---
+
+## Bronze Layer Loading Process
+
+A stored procedure is used for ingestion.
+
+Procedure:
+
+```sql
+bronze.usp_load_login_attempts
+```
+
+---
+
+## Bronze Load Logic
+
+The procedure performs:
+
+* truncates existing bronze tables
+* bulk inserts login dataset
+* bulk inserts intrusion dataset
+* skips header rows
+* uses UTF-8 encoding
+* handles errors using TRY...CATCH
+
+---
+
+## Example Execution
+
 ```sql
 EXEC bronze.usp_load_login_attempts;
 ```
----
----
-
-## Silver Layer – Data Cleaning and Standardization
-
-### Overview
-
-The Silver layer is responsible for transforming raw login data from the Bronze layer into clean, validated, and structured data.  
-This layer focuses on improving data quality and enforcing consistency so that the data can be reliably used for analytics and AI-based anomaly detection.
-
-Unlike the Bronze layer, which stores data exactly as received, the Silver layer applies controlled transformations while still preserving the original meaning of the data.
 
 ---
 
-### Purpose of the Silver Layer
+## Source Files Used
 
-The Silver layer was designed to:
-
-- Convert raw string values into appropriate data types
-- Remove invalid and inconsistent values
-- Standardize text-based fields
-- Validate logical consistency of security flags
-- Extract structured features from browser-related data
-- Prepare data for aggregation and modeling in the Gold layer
+```text
+C:\data\rba-dataset.csv
+C:\data\cybersecurity_intrusion_data.csv
+```
 
 ---
 
-### Silver Layer Architecture
+#  Silver Layer – Cleaned and Structured Data
 
-Bronze (Raw Data) → Silver (Cleaned and Structured Data)
+The Silver layer transforms Bronze data into validated structured records.
 
-> **Add Silver Layer Data Flow Diagram Here**  
-> (Diagram should show Bronze table feeding into Silver transformations)
+This layer improves:
 
----
-
-### Table: `silver.login_attempts`
-
-The Silver table stores cleaned and validated login data with proper data types.
-
-| Column Name | Data Type | Description |
-|------------|----------|-------------|
-| login_time | TIME | Converted login timestamp |
-| rtt_ms | INT | Cleaned network round-trip time |
-| ip_address | VARCHAR | Trimmed IP address |
-| country | VARCHAR | Standardized country code |
-| region | VARCHAR | Cleaned region |
-| city | VARCHAR | Cleaned city |
-| asn | INT | Converted ASN |
-| browser_name | VARCHAR | Cleaned browser string |
-| browser_family | VARCHAR | Extracted browser family |
-| browser_version | VARCHAR | Extracted browser version |
-| os_name | VARCHAR | Validated operating system |
-| device_type | VARCHAR | Normalized device type |
-| login_successful | BIT | Login success indicator |
-| is_attack_ip | BIT | Suspicious IP indicator |
-| is_account_takeover | BIT | Account takeover indicator |
+* data quality
+* consistency
+* reliability
 
 ---
 
-## Silver Layer Transformations
+## Silver Layer Purpose
 
-### 1. Timestamp Conversion
+The Silver layer performs:
 
-The original login timestamp was stored as text.  
-It was converted into SQL `TIME` format for consistency.
+* type conversion
+* null handling
+* text normalization
+* field validation
+* feature extraction
+
+---
+
+## Silver Tables Implemented
+
+---
+
+### silver.login_attempts
+
+Structured login records.
+
+Columns include:
+
+* login_time
+* rtt_ms
+* ip_address
+* country
+* region
+* city
+* asn
+* browser_name
+* browser_family
+* browser_version
+* os_name
+* device_type
+* login_successful
+* is_attack_ip
+* is_account_takeover
+
+---
+
+### silver.intrusion_detection
+
+Structured intrusion records.
+
+Columns include:
+
+* session_id
+* network_packet
+* protocol_type
+* login_attempts
+* session_duration
+* encryption_used
+* ip_reputation_score
+* failed_logins
+* browser_type
+* unusual_time_access
+* attack_detected
+* source_system
+
+---
+
+## Silver Layer ETL Procedure
+
+Procedure:
+
+```sql
+silver.load_silver
+```
+
+---
+
+## Example Execution
+
+```sql
+EXEC silver.load_silver;
+```
+
+---
+
+## Silver Transformations Applied
+
+---
+
+### Login Data Transformations
+
+---
+
+#### Timestamp Conversion
 
 ```sql
 TRY_CONVERT(TIME, '00:' + login_timestamp)
 ```
 
-### 2. RTT (Round Trip Time) Cleaning
-> Invalid RTT values such as NaN were handled safely.
-```
+---
+
+#### RTT Cleaning
+
+```sql
 TRY_CONVERT(INT, NULLIF(rtt_ms, 'NaN'))
 ```
-### 3. Text Field Cleaning
-> Leading and trailing spaces were removed from all relevant text columns.
-```
-NULLIF(LTRIM(RTRIM(column_name)), '')
 
-```
-### 4. Country Standardization
-> Country codes were standardized to uppercase to avoid case mismatches.
-```
+---
+
+#### Country Standardization
+
+```sql
 UPPER(NULLIF(LTRIM(RTRIM(country)), ''))
 ```
 
-### 5. Region and City Cleaning
-> Region and city values were cleaned without altering their meaning.
-```
-NULLIF(LTRIM(RTRIM(region)), '')
-NULLIF(LTRIM(RTRIM(city)), '')
+---
 
-```
-### 6. ASN Conversion
-> ASN values were converted from text to integer format.
-```
-TRY_CONVERT(INT, asn)
-```
-### 7. Browser Data Structuring
-> Browser information was preserved and enriched by extracting structured components.
-```
-NULLIF(LTRIM(RTRIM(browser_name)), '')
+#### Browser Family Extraction
 
-```
-- Browser Family Extraction
-```
-CASE 
-    WHEN browser_name LIKE 'Chrome%' THEN 'Chrome'
-    WHEN browser_name LIKE 'Firefox%' THEN 'Firefox'
-    WHEN browser_name LIKE 'Safari%' THEN 'Safari'
-    WHEN browser_name LIKE 'Edge%' THEN 'Edge'
-    ELSE 'Other'
-END
-
-```
-- Browser Version Extraction
-```
-CASE 
-    WHEN CHARINDEX(' ', browser_name) > 0
-    THEN RIGHT(browser_name, 
-               CHARINDEX(' ', REVERSE(browser_name)) - 1)
-    ELSE NULL
-END
-
-```
-- Browser Transformation Diagram
+Chrome, Firefox, Safari, Edge classification.
 
 ---
-### 8. Operating System Validation
-> The os_name column contained invalid numeric-only values (e.g., 134).
-Such values were removed to prevent invalid OS data.
 
-```
-CASE 
-    WHEN LTRIM(RTRIM(os_name)) NOT LIKE '%[A-Za-z]%' THEN NULL
-    ELSE NULLIF(LTRIM(RTRIM(os_name)), '')
-END
+#### Browser Version Extraction
 
-```
-### 9. Device Type Normalization
-> Device type values were standardized to lowercase.
-```
-LOWER(NULLIF(LTRIM(RTRIM(device_type)), ''))
-```
-### 10. Security Flag Validation
-> Login-related flags were converted into BIT values.
-```
-CASE 
-    WHEN login_successful = '1' THEN 1
-    WHEN login_successful = '0' THEN 0
-    ELSE NULL
-END
+Version parsed from browser string.
 
-```
-- The same logic was applied to:
-### is_attack_ip
-### is_account_takeover
-- Logical checks were performed to ensure no inconsistent combinations exist.
 ---
-## Loading Data into the Silver Layer
-### Stored Procedure
-- The Silver layer is populated using the following stored procedure:
-```
-EXEC silver.load_silver;
-```
----
-## This stored procedure performs the following actions:
 
-- Truncates the Silver table before each load  
-- Cleans and transforms data from the Bronze layer  
-- Validates column values and data types  
-- Extracts structured features (such as browser family and version)  
-- Handles errors using `TRY...CATCH` blocks  
-- Tracks execution time for monitoring and debugging  
+#### OS Validation
+
+Numeric-only invalid OS values removed.
+
+---
+
+#### Device Type Normalization
+
+Lowercase conversion applied.
+
+---
+
+#### Security Flags Converted to BIT
+
+Applied to:
+
+* login_successful
+* is_attack_ip
+* is_account_takeover
+
+---
+
+### Intrusion Data Transformations
+
+---
+
+#### Numeric Conversion
+
+Applied to:
+
+* network_packet
+* login_attempts
+* failed_logins
+
+---
+
+#### Protocol Standardization
+
+Converted to uppercase.
+
+---
+
+#### Encryption Handling
+
+NONE converted to NULL.
+
+---
+
+#### Browser Cleanup
+
+UNKNOWN converted to NULL.
+
+---
+
+#### Attack Flags Converted to BIT
+
+Applied to:
+
+* unusual_time_access
+* attack_detected
+
+---
+
+#### Source Lineage Added
+
+```sql
+INTRUSION_DETECTION_CSV
+```
+
+---
+
+## Load Monitoring Features
+
+Silver procedure includes:
+
+* execution time tracking
+* batch timing
+* step-by-step progress messages
+* error handling
+
+---
+#  Gold Layer – Analytics and Security Intelligence
+
+## Overview
+
+The Gold layer transforms cleaned security records from the Silver layer into **analytics-ready security summaries**.
+
+Unlike the Silver layer, which focuses on cleaning and validation, the Gold layer focuses on:
+
+* aggregation
+* security pattern summarization
+* risk scoring
+* feature generation for anomaly detection
+
+This layer represents the first business-facing analytical layer of the warehouse.
+
+---
+
+## Purpose of the Gold Layer
+
+The Gold layer was designed to:
+
+* generate summarized login intelligence
+* identify high-risk IP behavior
+* measure failure rates across dimensions
+* prepare structured outputs for AI anomaly detection
+* support dashboards and chatbot explanations
+
+---
+
+## Gold Layer Data Flow
+
+```text id="n4gr6u"
+Silver Layer
+   ↓
+Gold Analytical Tables
+   ↓
+AI Anomaly Detection
+```
+
+---
+
+## Gold Tables Implemented
+
+The following analytical tables were created in the `gold` schema.
+
+---
+
+## 1. `gold.login_fact`
+
+This is the core analytical fact table for login behavior.
+
+It stores login activity in a flattened analytical structure.
+
+### Columns
+
+| Column Name         | Description           |
+| ------------------- | --------------------- |
+| login_hour          | Extracted login hour  |
+| ip_address          | Login IP              |
+| country             | Country code          |
+| region              | Region                |
+| city                | City                  |
+| browser_family      | Browser family        |
+| os_name             | Operating system      |
+| device_type         | Device type           |
+| login_successful    | Login success flag    |
+| is_attack_ip        | Attack IP flag        |
+| is_account_takeover | Account takeover flag |
+
+---
+
+## Purpose
+
+This table supports flexible downstream analysis such as:
+
+* hourly login patterns
+* region-based analysis
+* device behavior analysis
+
+---
+
+## 2. `gold.login_time_summary`
+
+This table summarizes login behavior by hour.
+
+### Columns
+
+| Column Name   | Description          |
+| ------------- | -------------------- |
+| login_hour    | Hour of login        |
+| total_logins  | Total login attempts |
+| failed_logins | Failed login count   |
+| attack_logins | Attack IP count      |
+| failure_rate  | Failure percentage   |
+
+---
+
+## Purpose
+
+Used to identify:
+
+* unusual login hours
+* high-risk time windows
+* failed login concentration
+
+---
+
+## 3. `gold.ip_risk_summary`
+
+This table summarizes security behavior by IP address.
+
+### Columns
+
+| Column Name     | Description           |
+| --------------- | --------------------- |
+| ip_address      | Login IP              |
+| total_attempts  | Total login attempts  |
+| failed_attempts | Failed attempts       |
+| attack_attempts | Attack IP occurrences |
+| failure_rate    | Failure percentage    |
+| risk_level      | LOW / MEDIUM / HIGH   |
+
+---
+
+## Risk Classification Logic
+
+Risk levels are assigned using login behavior:
+
+* **HIGH** → attack attempts greater than 5
+* **MEDIUM** → failed attempts greater than 5
+* **LOW** → otherwise
+
+---
+
+## Purpose
+
+This table supports:
+
+* suspicious IP identification
+* attack concentration analysis
+
+---
+
+## 4. `gold.geo_risk_summary`
+
+This table summarizes geographic login risk.
+
+### Columns
+
+| Column Name   | Description        |
+| ------------- | ------------------ |
+| country       | Country            |
+| region        | Region             |
+| total_logins  | Total logins       |
+| failed_logins | Failed logins      |
+| attack_logins | Attack logins      |
+| failure_rate  | Failure percentage |
+
+---
+
+## Purpose
+
+Used for:
+
+* country-level risk analysis
+* region-level attack concentration
+
+---
+
+## 5. `gold.device_risk_summary`
+
+This table summarizes device and browser behavior.
+
+### Columns
+
+| Column Name    | Description        |
+| -------------- | ------------------ |
+| device_type    | Device category    |
+| browser_family | Browser family     |
+| total_logins   | Total logins       |
+| failed_logins  | Failed logins      |
+| attack_logins  | Attack logins      |
+| failure_rate   | Failure percentage |
+
+---
+
+## Purpose
+
+Used to detect:
+
+* suspicious device patterns
+* browser-related anomalies
+
+---
+
+## 6. `gold.intrusion_session_summary`
+
+This table summarizes intrusion records by protocol.
+
+### Columns
+
+| Column Name          | Description                            |
+| -------------------- | -------------------------------------- |
+| protocol_type        | TCP / UDP / ICMP                       |
+| total_sessions       | Total sessions                         |
+| avg_session_duration | Average duration                       |
+| avg_failed_logins    | Average failed logins                  |
+| detected_attacks     | Total attacks                          |
+| high_risk_sessions   | Sessions with high IP reputation score |
+
+---
+
+## Purpose
+
+Used for:
+
+* intrusion protocol analysis
+* high-risk session monitoring
+
+---
+
+# Gold Layer Loading Procedure
+
+## Stored Procedure
+
+The Gold layer is populated using:
+
+```sql id="g7mq0l"
+EXEC gold.load_gold;
+```
+
+---
+
+## What the Procedure Performs
+
+The procedure performs:
+
+* truncates existing Gold tables
+* loads analytical summaries from Silver layer
+* calculates failure rates
+* classifies IP risk levels
+* aggregates intrusion sessions
+
+---
+
+## Gold Layer Aggregations Applied
+
+---
+
+## Login Fact Creation
+
+The login hour is extracted from cleaned login time:
+
+```sql id="9wlnd6"
+DATEPART(HOUR, login_time)
+```
+
+---
+
+## Failure Rate Calculation
+
+Failure rates are calculated using:
+
+```sql id="p55y8n"
+ROUND(
+    CAST(SUM(CASE WHEN login_successful = 0 THEN 1 ELSE 0 END) AS FLOAT)
+    / COUNT(*) * 100, 2
+)
+```
+
+---
+
+## IP Risk Classification
+
+Risk level logic:
+
+```sql id="c8pn2x"
+CASE
+    WHEN attack_attempts > 5 THEN 'HIGH'
+    WHEN failed_attempts > 5 THEN 'MEDIUM'
+    ELSE 'LOW'
+END
+```
+
+---
+
+## Intrusion High-Risk Session Detection
+
+High-risk sessions are identified using:
+
+```sql id="vh1r7f"
+ip_reputation_score > 0.7
+```
+
+---
+
+# Gold Layer Validation Queries
+
+Example queries used to verify outputs:
+
+```sql id="1l4r9s"
+SELECT * FROM gold.login_time_summary;
+SELECT * FROM gold.ip_risk_summary;
+SELECT * FROM gold.geo_risk_summary;
+SELECT * FROM gold.device_risk_summary;
+SELECT * FROM gold.intrusion_session_summary;
+```
+
+---
+
+# Current Output of the Gold Layer
+
+At this stage, the warehouse can answer:
+
+* Which login hours are risky
+* Which IPs show repeated failures
+* Which regions have abnormal attack rates
+* Which devices show suspicious behavior
+* Which intrusion protocols are high risk
+
+---
+
+#  AI Anomaly Detection Layer
+
+## Overview
+
+After generating structured analytical outputs in the Gold layer, the next stage of the project applies **AI-based anomaly detection** to identify unusual security behavior.
+
+The anomaly detection layer uses **Isolation Forest**, an unsupervised machine learning algorithm designed to detect rare or abnormal patterns without requiring labeled attack data.
+
+This layer works on top of Gold-layer summaries because Gold tables already contain aggregated risk signals that are suitable for anomaly analysis.
+
+---
+
+## Why Isolation Forest Was Used
+
+Isolation Forest is suitable for this project because:
+
+* it works well on unlabeled security data
+* it isolates rare behavior efficiently
+* it performs well on high-volume security logs
+* it detects anomalies without predefined attack rules
+
+---
+
+## Python Backend
+
+The anomaly detection backend is implemented in:
+
+```text id="o8i6ly"
+Anomaly Detection Backend/
+└── anomaly_detection_gold.py
+```
+
+---
+
+## What the Python Backend Does
+
+The Python script connects anomaly detection with Gold-layer outputs.
+
+It performs the following tasks:
+
+* reads analytical data
+* selects risk features
+* trains Isolation Forest
+* detects anomalies
+* exports anomaly result files
+
+---
+
+## Input Used for AI Detection
+
+The model uses Gold-layer analytical summaries such as:
+
+* login hour summaries
+* IP risk summaries
+* geography summaries
+* device summaries
+* intrusion session summaries
+
+---
+
+## Output Files Generated
+
+The anomaly detection process creates separate output files for each security dimension.
+
+```text id="2p1q9v"
+ip_anomaly_results.csv
+time_anomaly_results.csv
+geo_anomaly_results.csv
+device_anomaly_results.csv
+session_anomaly_results.csv
+```
+
+---
+
+## Meaning of Output Files
+
+Each output file contains:
+
+* original analytical values
+* anomaly label
+* detected abnormal behavior
+
+Typical anomaly output:
+
+* `1` → anomaly detected
+* `0` → normal behavior
+
+---
+
+## Security Questions Answered by AI Layer
+
+The anomaly outputs help answer:
+
+* which IP addresses behave abnormally
+* which login hours are unusual
+* which regions show suspicious activity
+* which devices are uncommon
+* which intrusion sessions are high risk
+
+---
+
+#  React Security Dashboard
+
+## Overview
+
+To make anomaly outputs easier to interpret visually, a React dashboard was developed.
+
+The dashboard reads anomaly result files and converts them into security charts.
+
+---
+
+## Frontend Folder Structure
+
+```text id="8j24w4"
+Anomaly Detection React/
+```
+
+---
+
+## Main Frontend Components
+
+```text id="hqlcb7"
+src/components/
+```
+
+Includes:
+
+* ChartCard.jsx
+* CountryAttackChart.jsx
+* DeviceCharts.jsx
+* HighRiskRegions.jsx
+* KPICards.jsx
+* LoginBreakdown.jsx
+* ProtocolAnalysis.jsx
+
+---
+
+## Dashboard Purpose
+
+The dashboard provides visual answers to:
+
+* where attacks are concentrated
+* which countries are risky
+* which devices fail more
+* which protocols show abnormal activity
+
+---
+
+## KPI Layer
+
+The KPI cards summarize:
+
+* total anomalies
+* suspicious IP count
+* risky sessions
+* attack concentration
+
+---
+
+## Data Source for Dashboard
+
+Dashboard CSV files are stored in:
+
+```text id="o8lmb9"
+public/data/
+```
+
+---
+
+## Files Used
+
+```text id="k2h5rj"
+device_anomaly_results.csv
+geo_anomaly_results.csv
+ip_anomaly_results.csv
+session_anomaly_results.csv
+time_anomaly_results.csv
+```
+
+---
+
+## Frontend Utility Layer
+
+The React project includes utility functions for:
+
+* loading CSV files
+* preprocessing anomaly data
+* feeding chart components
+
+Located in:
+
+```text id="x8k6qg"
+src/utils/
+```
+
+Includes:
+
+* loadCSV.js
+* dataProcessing.js
+
+---
+
+# 💬 AI Security Chatbot (Planned Extension)
+
+## Overview
+
+A conversational chatbot is planned as the next extension of the project to allow users to ask security-related questions directly.
+
+The purpose of this component is to explain anomaly detection results in simple language and make analytical outputs easier to interpret.
+
+---
+
+## Planned Objective
+
+The chatbot is intended to:
+
+* answer security-related questions using anomaly outputs
+* explain suspicious patterns in simple language
+* support interactive exploration of anomaly results
+
+---
+
+## Proposed Technology
+
+The chatbot is planned to be built using:
+
+Streamlit
+
+---
+
+## Planned Functionality
+
+The chatbot is expected to read anomaly result files and answer questions such as:
+
+* Show suspicious IPs
+* Which regions are risky?
+* When do attacks happen?
+* Are mobile devices risky?
+* Show session anomalies
+
+---
+
+## Planned Working Logic
+
+The chatbot is planned to work by:
+
+* reading anomaly CSV output files
+* matching user questions to anomaly categories
+* returning security explanations
+
+---
+
+## Example Planned Query
+
+A user will be able to ask:
+
+```text id="m2ub0k"
+Which regions are risky?
+```
+
+The chatbot will respond using:
+
+```text id="wqf5a2"
+geo_anomaly_results.csv
+```
+
+---
+
+## Current Status
+
+This component is currently under development and will be added after completing dashboard refinement and anomaly output integration.
+
+---
+
+#  Repository Structure
+
+Current repository organization:
+
+```text id="n4cbf6"
+SECURITY-LOG-ANALYTICS-USING-DATA-WAREHOUSING-WITH-AI-BASED-ANOMALY-DETECTION
+
+├── Anomaly Detection Backend
+│   └── anomaly_detection_gold.py
+
+├── Anomaly Detection React
+│   ├── public/data/
+│   ├── src/components/
+│   ├── src/utils/
+
+├── Script
+├── Source Data File
+├── Tests
+├── Document
+```
+
+---
+
+# Current System Capability
+
+At this stage, the full system can:
+
+* ingest raw security logs
+* clean and validate records
+* generate risk summaries
+* detect anomalies using AI
+* visualize threats through dashboard outputs
+
+---
+
+#  Next Improvement Areas
+
+Planned future enhancements:
+
+* AI security chatbot integration
+* SQL-to-Python pipeline automation
+* live dashboard refresh
+* stronger anomaly explanation logic
+* API integration
