@@ -1067,36 +1067,37 @@ Includes:
 
 ---
 
-#  AI Security Chatbot
+# 💬 AI Security Chatbot (Planned Extension)
 
 ## Overview
 
-A conversational chatbot was added so users can ask security-related questions directly.
+A conversational chatbot is planned as the next extension of the project to allow users to ask security-related questions directly.
 
-This allows anomaly results to be explained in simple language.
-
----
-
-## Chatbot Location
-
-```text id="g4pkzw"
-Anomaly_Detection/
-└── security_chatbot_app.py
-```
+The purpose of this component is to explain anomaly detection results in simple language and make analytical outputs easier to interpret.
 
 ---
 
-## Technology Used
+## Planned Objective
 
-The chatbot is built using:
+The chatbot is intended to:
+
+* answer security-related questions using anomaly outputs
+* explain suspicious patterns in simple language
+* support interactive exploration of anomaly results
+
+---
+
+## Proposed Technology
+
+The chatbot is planned to be built using:
 
 Streamlit
 
 ---
 
-## What the Chatbot Does
+## Planned Functionality
 
-The chatbot reads anomaly result files and answers questions such as:
+The chatbot is expected to read anomaly result files and answer questions such as:
 
 * Show suspicious IPs
 * Which regions are risky?
@@ -1106,37 +1107,35 @@ The chatbot reads anomaly result files and answers questions such as:
 
 ---
 
-## Chatbot Logic
+## Planned Working Logic
 
-The chatbot works by:
+The chatbot is planned to work by:
 
-* reading anomaly CSV outputs
-* matching user question keywords
-* returning anomaly explanation
-
----
-
-## Current Chatbot Scope
-
-The chatbot currently supports project-related security questions.
-
-It is designed as an explainable AI layer rather than a general-purpose chatbot.
+* reading anomaly CSV output files
+* matching user questions to anomaly categories
+* returning security explanations
 
 ---
 
-## Example Security Insight
+## Example Planned Query
 
-A user can ask:
+A user will be able to ask:
 
-```text id="3a1z3f"
+```text id="m2ub0k"
 Which regions are risky?
 ```
 
-The chatbot responds using anomaly output from:
+The chatbot will respond using:
 
-```text id="vduq85"
+```text id="wqf5a2"
 geo_anomaly_results.csv
 ```
+
+---
+
+## Current Status
+
+This component is currently under development and will be added after completing dashboard refinement and anomaly output integration.
 
 ---
 
@@ -1144,7 +1143,7 @@ geo_anomaly_results.csv
 
 Current repository organization:
 
-```text id="2lm0kk"
+```text id="n4cbf6"
 SECURITY-LOG-ANALYTICS-USING-DATA-WAREHOUSING-WITH-AI-BASED-ANOMALY-DETECTION
 
 ├── Anomaly Detection Backend
@@ -1155,11 +1154,6 @@ SECURITY-LOG-ANALYTICS-USING-DATA-WAREHOUSING-WITH-AI-BASED-ANOMALY-DETECTION
 │   ├── src/components/
 │   ├── src/utils/
 
-├── Anomaly_Detection
-│   ├── code.ipynb
-│   ├── security_chatbot_app.py
-│   ├── anomaly result csv files
-
 ├── Script
 ├── Source Data File
 ├── Tests
@@ -1168,7 +1162,7 @@ SECURITY-LOG-ANALYTICS-USING-DATA-WAREHOUSING-WITH-AI-BASED-ANOMALY-DETECTION
 
 ---
 
-#  Current System Capability
+# Current System Capability
 
 At this stage, the full system can:
 
@@ -1176,8 +1170,7 @@ At this stage, the full system can:
 * clean and validate records
 * generate risk summaries
 * detect anomalies using AI
-* visualize threats
-* explain anomalies conversationally
+* visualize threats through dashboard outputs
 
 ---
 
@@ -1185,11 +1178,8 @@ At this stage, the full system can:
 
 Planned future enhancements:
 
-* real-time anomaly scoring
+* AI security chatbot integration
 * SQL-to-Python pipeline automation
 * live dashboard refresh
-* stronger chatbot reasoning
+* stronger anomaly explanation logic
 * API integration
-
-
-
