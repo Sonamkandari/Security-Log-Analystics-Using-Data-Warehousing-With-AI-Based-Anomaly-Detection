@@ -83,7 +83,6 @@ with col3:
         st.session_state["query"] = "explain isolation forest"
 
 st.divider()
-
 # -----------------------------
 # Chat Input
 # -----------------------------
