@@ -15,7 +15,7 @@ A capstone project focused on building a structured security analytics pipeline 
 The following diagram shows the complete end-to-end flow of the project, starting from raw security datasets, moving through the medallion warehouse layers, and finally serving analytical consumers such as dashboards and chatbot systems.
 
 ---
-<img width="2071" height="965" alt="High level Architecture" src="https://github.com/user-attachments/assets/43f26f93-b6a3-42db-8106-3e3d694b7c65" />
+<img width="2306" height="827" alt="HLA drawio" src="https://github.com/user-attachments/assets/05fb6aa4-b46c-46bc-b803-8346bc48b746" />
 
 ---
 ##  Project Overview
