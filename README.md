@@ -864,7 +864,11 @@ At this stage, the warehouse can answer:
 * Which intrusion protocols are high risk
 
 ---
+AI Pipeline Architecture
+---
+<img width="915" height="531" alt="image" src="https://github.com/user-attachments/assets/f58f48a5-8d3e-44da-8194-0003b23d315f" />
 
+---
 #  AI Anomaly Detection Layer
 
 ## Overview
