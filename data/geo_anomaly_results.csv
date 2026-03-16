@@ -1,0 +1,1319 @@
+country,region,total_logins,failed_logins,attack_logins,failure_rate,anomaly_flag,is_anomaly
+GB,Newham,2,2,0,100.0,1,0
+LU,Luxembourg,15,12,0,80.0,1,0
+FR,Paris,258,196,6,75.97,1,0
+EE,Tallinn,8,7,0,87.5,1,0
+KR,JeollabukNULLdo,1,1,0,100.0,1,0
+PT,NULL,125,109,33,87.2,1,0
+LV,Rezekne,7,5,0,71.43,1,0
+TD,Ouadaï,2,2,0,100.0,1,0
+PG,Eastern Highlands Province,4,1,0,25.0,1,0
+NZ,ManawatuNULLWanganui,26,20,0,76.92,1,0
+DE,Land Berlin,81,38,0,46.91,1,0
+IQ,NULL,238,146,69,61.34,1,0
+SI,Obcina Zirovnica,1,0,0,0.0,1,0
+ES,Castille and León,4,4,0,100.0,1,0
+AU,South Australia,13,9,0,69.23,1,0
+GW,NULL,2,1,0,50.0,1,0
+IT,Sardinia,16,9,0,56.25,1,0
+CR,Provincia de San Jose,39,37,0,94.87,1,0
+CZ,Kralovehradecky kraj,44,19,6,43.18,1,0
+FR,Corsica,8,3,0,37.5,1,0
+KZ,Almaty,20,9,0,45.0,1,0
+LV,Ropazu Novads,2,2,0,100.0,1,0
+VN,Tinh Lam GJong,1,1,0,100.0,1,0
+US,Oklahoma,33,21,27,63.64,1,0
+RW,NULL,11,11,0,100.0,1,0
+NZ,Taranaki,5,5,0,100.0,1,0
+BW,City of Francistown,10,10,0,100.0,1,0
+MD,Stra?eni,1,1,0,100.0,1,0
+AE,Dubai,5,5,0,100.0,1,0
+LB,Mohafazat LibanNULLNord,1,1,0,100.0,1,0
+EE,Harjumaa,50,44,0,88.0,1,0
+NG,Lagos,102,57,0,55.88,1,0
+GE,NULL,36,24,1,66.67,1,0
+LK,Sabaragamuwa Province,7,7,0,100.0,1,0
+RU,Sverdlovsk Oblast,4,4,0,100.0,1,0
+VE,NULL,11,9,0,81.82,1,0
+PH,Central Visayas,2,2,0,100.0,1,0
+RU,Primorskiy (Maritime) Kray,1,1,0,100.0,1,0
+HK,Eastern,14,9,0,64.29,1,0
+NZ,Auckland,677,521,0,76.96,1,0
+IN,Jharkhand,19,14,0,73.68,1,0
+HK,Islands District,2,2,0,100.0,1,0
+IN,Mizoram,19,19,0,100.0,1,0
+SS,Central Equatoria,3,3,0,100.0,1,0
+HU,Nograd megye,10,3,0,30.0,1,0
+VI,NULL,2,2,0,100.0,1,0
+FR,North,601,404,9,67.22,1,0
+US,Kentucky,32,21,29,65.63,1,0
+JP,Saitama,4,1,0,25.0,1,0
+CZ,South Moravian,222,140,1,63.06,1,0
+CV,NULL,15,9,0,60.0,1,0
+IT,Latium,14,10,0,71.43,1,0
+MD,Raionul Causeni,7,7,0,100.0,1,0
+LV,Auces,1,1,0,100.0,1,0
+SA,Najran Region,6,6,0,100.0,1,0
+GB,Windsor and Maidenhead,1,1,0,100.0,1,0
+SI,Lukovica,2,1,0,50.0,1,0
+IN,Haryana,415,315,0,75.9,1,0
+PE,Lambayeque,1,0,0,0.0,1,0
+TD,Lac Region,2,2,0,100.0,1,0
+TR,Hatay,3,3,0,100.0,1,0
+MF,NULL,2,1,0,50.0,1,0
+IR,Markazi,14,5,0,35.71,1,0
+ML,Kayes,2,2,0,100.0,1,0
+GT,Departamento de Escuintla,1,0,1,0.0,1,0
+AG,Parish of Saint Paul,1,1,0,100.0,1,0
+FI,Uusimaa,259,177,0,68.34,1,0
+PL,Subcarpathia,749,473,55,63.15,1,0
+NL,Friesland,186,84,7,45.16,1,0
+AM,Yerevan,10,8,0,80.0,1,0
+BF,SudNULLOuest,1,0,0,0.0,1,0
+KR,North Chungcheong,2,2,0,100.0,1,0
+CH,Geneva,8,1,0,12.5,1,0
+US,Kansas,89,64,71,71.91,1,0
+DE,North RhineNULLWestphalia,537,276,7,51.4,1,0
+IE,Connaught,2,0,0,0.0,1,0
+NL,NULL,1042,657,42,63.05,1,0
+FR,Occitanie,184,132,1,71.74,1,0
+NG,Akwa Ibom State,2,1,0,50.0,1,0
+MY,Johor,13,8,0,61.54,1,0
+AM,NULL,12,12,1,100.0,1,0
+BE,Brussels Capital,35,29,2,82.86,1,0
+US,Montana,28,19,20,67.86,1,0
+SI,Obcina Recica ob Savinji,2,2,0,100.0,1,0
+CO,Departamento del Cesar,32,31,0,96.88,1,0
+BF,NULL,14,12,0,85.71,1,0
+RO,Valcea,15,11,0,73.33,1,0
+LV,NULL,143,103,2,72.03,1,0
+NC,NULL,3,1,2,33.33,1,0
+VI,Saint Croix Island,8,6,0,75.0,1,0
+CO,San Andres y Providencia,6,6,0,100.0,1,0
+MD,Raionul Calarasi,2,2,0,100.0,1,0
+SI,Obcina Sodrazica,1,0,0,0.0,1,0
+IT,Milan,60,33,0,55.0,1,0
+SI,Obcina Salovci,26,5,0,19.23,1,0
+RO,Cluj,26,22,0,84.62,1,0
+NC,South Province,14,4,0,28.57,1,0
+IN,Ladakh,6,4,0,66.67,1,0
+US,Arkansas,34,27,31,79.41,1,0
+HU,KomáromNULLEsztergom,1,0,0,0.0,1,0
+HU,GyorNULLMosonNULLSopron,4,3,0,75.0,1,0
+NL,North Brabant,93,62,17,66.67,1,0
+PH,NULL,192,104,10,54.17,1,0
+FI,Pirkanmaa,58,58,0,100.0,1,0
+FR,ÎleNULLdeNULLFrance,375,292,16,77.87,1,0
+TR,Guemueshane,1,1,0,100.0,1,0
+SI,Ljubno,1,0,0,0.0,1,0
+TR,Bursa,77,73,4,94.81,1,0
+SE,Kalmar,1,0,0,0.0,1,0
+PH,Ilocos,50,20,33,40.0,1,0
+RU,Yaroslavskaya Oblast',5,3,0,60.0,1,0
+ZM,Lusaka Province,11,8,0,72.73,1,0
+SI,Velenje,122,13,0,10.66,1,0
+NP,Province 1,6,5,0,83.33,1,0
+RU,Moscow,293,260,201,88.74,-1,1
+GB,Sandwell,2,0,0,0.0,1,0
+MD,Raionul Soroca,3,3,0,100.0,1,0
+RU,Adygeya Republic,1,0,0,0.0,1,0
+IT,Valle d'Aosta,2,0,0,0.0,1,0
+GA,NULL,18,17,0,94.44,1,0
+EE,NULL,58,53,1,91.38,1,0
+IR,Gilan Province,10,3,0,30.0,1,0
+IR,Kerman,9,5,0,55.56,1,0
+NG,Kaduna State,5,3,0,60.0,1,0
+FR,Brittany,102,80,0,78.43,1,0
+DE,SaxonyNULLAnhalt,126,86,19,68.25,1,0
+BG,Yambol,4,4,0,100.0,1,0
+MU,NULL,74,45,0,60.81,1,0
+TR,Elazig,8,8,0,100.0,1,0
+UA,Vinnytsya Oblast,120,70,3,58.33,1,0
+RU,St.NULLPetersburg,72,45,20,62.5,1,0
+TW,NULL,202,112,2,55.45,1,0
+UA,Lvivska Oblast,265,178,0,67.17,1,0
+WS,Satupa'itea,6,5,0,83.33,1,0
+BR,Espirito Santo,128,73,1,57.03,1,0
+HR,BjelovarNULLBilogora,4,4,0,100.0,1,0
+NZ,Hawke's Bay,295,231,0,78.31,1,0
+TO,Niuas,1,0,0,0.0,1,0
+SE,Uppsala County,1,0,0,0.0,1,0
+LV,Olaine,1,0,0,0.0,1,0
+US,Texas,16942,12388,4300,73.12,-1,1
+FR,ProvenceNULLAlpesNULLCôte d'Azur,37,29,0,78.38,1,0
+US,Ohio,49,39,32,79.59,1,0
+CA,NULL,869,570,42,65.59,1,0
+AT,Upper Austria,4,1,0,25.0,1,0
+CA,Alberta,10,5,2,50.0,1,0
+VE,Apure,2,2,0,100.0,1,0
+SI,Obcina Luce,3,3,0,100.0,1,0
+NO,Viken,56228,19378,550,34.46,-1,1
+AZ,NULL,8,6,0,75.0,1,0
+FI,NULL,892,624,24,69.96,1,0
+TD,Mandoul,7,0,0,0.0,1,0
+PK,GilgitNULLBaltistan,1,1,0,100.0,1,0
+RO,Mehedinti,1,1,0,100.0,1,0
+LK,NULL,3,3,0,100.0,1,0
+ID,Maluku,6,6,0,100.0,1,0
+LI,NULL,11,7,0,63.64,1,0
+PS,Gaza,3,0,0,0.0,1,0
+SI,NULL,269,183,1,68.03,1,0
+MX,Sinaloa,10,10,0,100.0,1,0
+LB,NULL,77,73,5,94.81,1,0
+LV,Jelgavas novads,1,1,0,100.0,1,0
+CZ,Jihocesky kraj,30,23,0,76.67,1,0
+RU,Rostov Oblast,63,45,43,71.43,1,0
+BR,NULL,19868,13772,414,69.32,-1,1
+CH,Schwyz,6,4,0,66.67,1,0
+NO,Innlandet,23154,8126,250,35.1,-1,1
+HN,Departamento de Choluteca,2,2,0,100.0,1,0
+JP,Hiroshima,5,2,0,40.0,1,0
+AR,Catamarca,1,1,1,100.0,1,0
+AR,Buenos Aires F.D.,9,5,6,55.56,1,0
+NL,Zeeland,23,15,5,65.22,1,0
+RO,Hunedoara,17,17,0,100.0,1,0
+ZA,NULL,9,6,0,66.67,1,0
+HU,NULL,102,51,3,50.0,1,0
+TR,Adiyaman,1,1,1,100.0,1,0
+PL,West Pomerania,473,269,60,56.87,1,0
+BD,Rajshahi Division,22,5,3,22.73,1,0
+KR,Daegu,1,0,0,0.0,1,0
+BF,Centre,2,2,0,100.0,1,0
+AO,Bíe,12,4,0,33.33,1,0
+IL,NULL,256,139,6,54.3,1,0
+HU,Veszprem megye,5,4,0,80.0,1,0
+LR,River Gee County,1,1,1,100.0,1,0
+IN,Tamil Nadu,620,437,38,70.48,1,0
+CH,Aargau,8,4,0,50.0,1,0
+CZ,Central Bohemia,820,479,3,58.41,1,0
+RU,Krasnodarskiy Kray,18,16,4,88.89,1,0
+EE,IdaNULLVirumaa,5,5,0,100.0,1,0
+RO,Neamt,14,12,0,85.71,1,0
+NO,Oslo County,65180,23598,978,36.2,-1,1
+LR,Lofa County,1,1,1,100.0,1,0
+GB,Highland,3,1,0,33.33,1,0
+HN,NULL,2,2,0,100.0,1,0
+RO,NULL,1911,1648,839,86.24,-1,1
+NZ,Waikato,29,14,0,48.28,1,0
+AR,Santiago del Estero,10,10,0,100.0,1,0
+US,Iowa,54,38,36,70.37,1,0
+SA,Jazan Region,1,0,0,0.0,1,0
+TH,Prachin Buri,1,1,0,100.0,1,0
+US,Tennessee,173,119,63,68.79,1,0
+CH,Lucerne,34,14,0,41.18,1,0
+SI,Obcina Zalec,1,0,1,0.0,1,0
+IR,Mazandaran,39,20,1,51.28,1,0
+AT,Vienna,18,11,0,61.11,1,0
+NZ,NULL,408,346,15,84.8,1,0
+BG,Lovech,8,6,0,75.0,1,0
+GE,Abkhazia,1,1,0,100.0,1,0
+MD,Telenesti,1,0,0,0.0,1,0
+VN,Tinh Bac Giang,1,1,0,100.0,1,0
+EC,NULL,80,53,0,66.25,1,0
+RO,Gorj,20,14,0,70.0,1,0
+AR,Neuquen,7,7,7,100.0,1,0
+BR,Acre,20,16,0,80.0,1,0
+JM,NULL,3,2,0,66.67,1,0
+IL,Tel Aviv,101,54,16,53.47,1,0
+CM,NULL,37,18,0,48.65,1,0
+IN,Odisha,90,80,0,88.89,1,0
+MW,NULL,27,11,0,40.74,1,0
+RO,Mures,22,20,0,90.91,1,0
+CA,Manitoba,170,154,36,90.59,1,0
+ID,North Kalimantan,2,0,0,0.0,1,0
+SS,NULL,12,11,0,91.67,1,0
+CL,Region de la Araucania,12,5,2,41.67,1,0
+SI,Kungota,8,0,0,0.0,1,0
+ID,Bengkulu,29,25,23,86.21,1,0
+SI,Vipava,3,0,0,0.0,1,0
+NO,Troms og Finnmark,6039,2004,6,33.18,-1,1
+NG,Benue State,3,2,0,66.67,1,0
+CR,Provincia de Cartago,19,16,0,84.21,1,0
+CD,NULL,35,30,17,85.71,1,0
+UA,Kyiv City,1592,1034,43,64.95,1,0
+GB,Wales,9,2,0,22.22,1,0
+DZ,Tipaza,2,2,0,100.0,1,0
+TR,Mugla,3,3,2,100.0,1,0
+SK,NULL,88,48,1,54.55,1,0
+PL,Lubusz,912,550,252,60.31,-1,1
+SL,NULL,10,10,2,100.0,1,0
+QA,Baladiyat ad Dawhah,16,9,0,56.25,1,0
+TR,Kirklareli,2,1,2,50.0,1,0
+HU,Zala,30,10,0,33.33,1,0
+IT,The Marches,8,8,0,100.0,1,0
+TR,Trabzon,90,84,0,93.33,1,0
+RO,Giurgiu,41,27,1,65.85,1,0
+AX,NULL,9,5,0,55.56,1,0
+FK,NULL,1,1,0,100.0,1,0
+KG,NULL,107,74,3,69.16,1,0
+ID,Riau Islands,12,8,1,66.67,1,0
+MN,Suhbaatar Aymag,2,0,0,0.0,1,0
+BG,Pleven,3,3,0,100.0,1,0
+IL,Central District,21,9,0,42.86,1,0
+TT,Port of Spain,5,2,0,40.0,1,0
+JP,Mie,2,1,0,50.0,1,0
+FR,Normandy,62,44,3,70.97,1,0
+UA,Dnipropetrovsk Oblast,159,106,0,66.67,1,0
+PL,Opole Voivodeship,265,141,0,53.21,1,0
+SI,Naklo,1,0,0,0.0,1,0
+NI,Departamento de Managua,1,1,0,100.0,1,0
+BL,NULL,1,1,0,100.0,1,0
+SI,Obcina Sezana,19,9,0,47.37,1,0
+ID,West Java,773,535,77,69.21,1,0
+NL,Utrecht,51,30,0,58.82,1,0
+MA,NULL,1,1,0,100.0,1,0
+QA,AlNULLShahaniya,1,1,0,100.0,1,0
+US,New Mexico,15,7,13,46.67,1,0
+TM,Dasoguz Welayaty,1,0,0,0.0,1,0
+UA,Chernihiv,137,100,0,72.99,1,0
+EC,Provincia de El Oro,4,1,0,25.0,1,0
+RO,Alba,26,22,0,84.62,1,0
+RO,Arad,24,17,3,70.83,1,0
+US,North Dakota,34,25,29,73.53,1,0
+SK,Zilina,81,51,0,62.96,1,0
+VG,NULL,84,50,0,59.52,1,0
+RU,Moscow Oblast,17,13,4,76.47,1,0
+BF,CentreNULLOuest,1,1,0,100.0,1,0
+RU,Khakasiya Republic,1,0,0,0.0,1,0
+GY,DemeraraNULLMahaica Region,2,0,0,0.0,1,0
+GY,NULL,1,0,0,0.0,1,0
+TZ,Kigoma,1,1,0,100.0,1,0
+GP,NULL,12,11,0,91.67,1,0
+TZ,Mara,2,2,0,100.0,1,0
+BG,Silistra,8,8,0,100.0,1,0
+CA,Newfoundland and Labrador,7,4,1,57.14,1,0
+CR,Provincia de Alajuela,8,8,0,100.0,1,0
+TR,Konya,11,3,0,27.27,1,0
+US,Maine,79,59,76,74.68,1,0
+SI,Obcina Zelezniki,1,1,0,100.0,1,0
+PK,Islamabad,1,0,0,0.0,1,0
+TH,NULL,302,219,6,72.52,1,0
+CO,Departamento de Risaralda,3,3,0,100.0,1,0
+AG,Parish of Saint John,2,2,0,100.0,1,0
+US,Pennsylvania,408,308,25,75.49,1,0
+NO,Møre og Romsdal,10018,3632,139,36.25,-1,1
+ID,North Sulawesi,15,11,0,73.33,1,0
+CY,NULL,19,15,0,78.95,1,0
+NE,NULL,1,1,0,100.0,1,0
+PH,Calabarzon,282,181,58,64.18,1,0
+BD,Rangpur Division,3,2,0,66.67,1,0
+MD,Hîncesti,14,6,0,42.86,1,0
+MC,NULL,7,4,1,57.14,1,0
+RO,Dambovita,81,66,0,81.48,1,0
+HU,JászNULLNagykunNULLSzolnok,1,0,0,0.0,1,0
+TH,Chiang Mai,13,8,0,61.54,1,0
+PH,Caraga,9,2,0,22.22,1,0
+SV,NULL,31,28,0,90.32,1,0
+CY,Limassol District,7,6,0,85.71,1,0
+ID,West Sulawesi,10,8,4,80.0,1,0
+MD,Cantemir,2,2,2,100.0,1,0
+ES,Madrid,49,28,0,57.14,1,0
+MY,Sarawak,5,5,0,100.0,1,0
+KR,NULL,708,445,5,62.85,1,0
+ID,South Sulawesi,90,63,52,70.0,1,0
+AR,Tucuman,14,9,7,64.29,1,0
+AF,Herat,1,1,0,100.0,1,0
+PE,NULL,37,18,0,48.65,1,0
+UA,Donetsk Oblast,237,158,0,66.67,1,0
+LV,Siguldas Novads,1,1,0,100.0,1,0
+MY,Melaka,12,8,0,66.67,1,0
+MU,Pamplemousses District,2,2,0,100.0,1,0
+DK,North Denmark,82,43,4,52.44,1,0
+PH,Eastern Visayas,2,1,0,50.0,1,0
+AO,Uíge,1,1,0,100.0,1,0
+MY,Perlis,8,8,7,100.0,1,0
+ML,Mopti,1,1,0,100.0,1,0
+RU,Vladimirskaya Oblast',2,2,2,100.0,1,0
+VN,Hanoi,6,6,0,100.0,1,0
+PE,Lima region,1,0,0,0.0,1,0
+NG,Ondo State,1,0,0,0.0,1,0
+RO,Bacau,39,39,37,100.0,1,0
+TN,NULL,4,4,0,100.0,1,0
+CH,Grisons,4,0,0,0.0,1,0
+AU,New South Wales,570,427,0,74.91,1,0
+BG,Montana,7,6,0,85.71,1,0
+LU,EschNULLsurNULLAlzette,1,1,1,100.0,1,0
+LV,Riebinu Novads,12,7,0,58.33,1,0
+SI,Cirkulane,2,0,0,0.0,1,0
+NO,Rogaland,46866,16104,521,34.36,-1,1
+CY,Keryneia,1,1,0,100.0,1,0
+HU,Csongrad megye,2,1,0,50.0,1,0
+MY,Selangor,98,65,8,66.33,1,0
+BB,Saint Michael,4,0,0,0.0,1,0
+SI,Obcina Domzale,7,6,0,85.71,1,0
+UA,Mykolayiv Oblast,64,32,0,50.0,1,0
+GH,NULL,10,10,0,100.0,1,0
+HU,Pest megye,37,28,0,75.68,1,0
+LU,Remich,10,6,0,60.0,1,0
+TR,Kocaeli,14,11,9,78.57,1,0
+LV,Carnikava,7,6,0,85.71,1,0
+MN,Bayanhongor Aymag,5,5,0,100.0,1,0
+GR,West Macedonia,3,3,0,100.0,1,0
+KN,Saint George Basseterre,2,2,0,100.0,1,0
+FR,Grand Est,91,65,2,71.43,1,0
+OM,Muscat,7,7,0,100.0,1,0
+MZ,NULL,1,0,0,0.0,1,0
+BG,Kardzhali,5,4,0,80.0,1,0
+KR,SejongNULLsi,1,1,0,100.0,1,0
+DK,NULL,534,360,47,67.42,1,0
+TR,Afyonkarahisar,2,2,2,100.0,1,0
+UA,Donetska Oblast,117,80,0,68.38,1,0
+AR,San Luis,1,1,0,100.0,1,0
+RU,Arkhangelskaya,1,1,0,100.0,1,0
+ID,West Sumatra,14,11,0,78.57,1,0
+IT,Provincia di Treviso,7,3,0,42.86,1,0
+BG,Pernik,12,5,0,41.67,1,0
+US,New Hampshire,17,13,12,76.47,1,0
+LI,Schaan,8,6,0,75.0,1,0
+AR,Cordoba,1531,1520,61,99.28,-1,1
+LV,Ogre,4,3,0,75.0,1,0
+NZ,Bay of Plenty,33,19,0,57.58,1,0
+NG,Gombe State,2,2,0,100.0,1,0
+IN,Meghalaya,18,11,0,61.11,1,0
+FR,NULL,3903,2839,33,72.74,-1,1
+BG,Vratsa,1,1,0,100.0,1,0
+US,NULL,144342,95600,47167,66.23,-1,1
+FR,NouvelleNULLAquitaine,190,133,0,70.0,1,0
+JO,Amman Governorate,11,11,0,100.0,1,0
+PL,Pomerania,2389,1355,99,56.72,-1,1
+US,Missouri,102,73,82,71.57,1,0
+CL,O'Higgins Region,190,188,188,98.95,-1,1
+HR,NULL,41,41,11,100.0,1,0
+TZ,Arusha,6,5,0,83.33,1,0
+IR,Hamadan Province,16,5,2,31.25,1,0
+BE,Wallonia,69,54,8,78.26,1,0
+SA,Riyadh Region,13,13,0,100.0,1,0
+CL,Santiago Metropolitan,268,163,2,60.82,1,0
+MD,Raionul Dubasari,2,0,0,0.0,1,0
+NG,NULL,91,54,2,59.34,1,0
+LR,NULL,21,21,3,100.0,1,0
+HU,Baranya,8,7,0,87.5,1,0
+HK,NULL,87,62,4,71.26,1,0
+GB,Lincolnshire,10,3,0,30.0,1,0
+MX,San Luis Potosí,5,5,0,100.0,1,0
+MD,Glodeni,1,0,0,0.0,1,0
+IT,Venice,5,3,0,60.0,1,0
+VN,Tinh Quang Ninh,1,1,0,100.0,1,0
+SZ,Manzini,1,0,0,0.0,1,0
+BR,Paraíba,200,132,2,66.0,1,0
+IR,Alborz Province,5,3,0,60.0,1,0
+HU,Tolna megye,13,9,0,69.23,1,0
+ZM,NULL,4,1,0,25.0,1,0
+GR,Crete,1,0,0,0.0,1,0
+NG,Rivers State,1,0,0,0.0,1,0
+LY,NULL,12,12,1,100.0,1,0
+TH,Bangkok,128,83,0,64.84,1,0
+UA,NULL,5878,3808,83,64.78,-1,1
+CL,Region del Biobio,4,0,0,0.0,1,0
+DO,Provincia de Valverde,1,1,0,100.0,1,0
+LV,Tukuma novads,2,2,0,100.0,1,0
+SC,Au Cap,1,1,0,100.0,1,0
+AU,Queensland,166,138,0,83.13,1,0
+NO,Agder,8945,3318,148,37.09,-1,1
+US,Virginia,288,224,186,77.78,1,0
+BR,Sergipe,145,86,0,59.31,1,0
+CH,Vaud,26,16,1,61.54,1,0
+VN,NULL,561,552,179,98.4,-1,1
+IT,Umbria,24,9,0,37.5,1,0
+MY,Kedah,62,38,0,61.29,1,0
+ID,Central Kalimantan,12,5,2,41.67,1,0
+BO,Departamento de Cochabamba,1,1,0,100.0,1,0
+TG,NULL,2,2,2,100.0,1,0
+IR,Khuzestan,8,3,0,37.5,1,0
+AT,Lower Austria,5,4,0,80.0,1,0
+CY,Nicosia,1,0,0,0.0,1,0
+ID,NULL,4861,3394,518,69.82,-1,1
+GT,Departamento de Guatemala,24,9,0,37.5,1,0
+JP,Kanagawa,14,9,1,64.29,1,0
+LA,Khoueng Phongsali,2,2,0,100.0,1,0
+NL,Groningen,28,19,1,67.86,1,0
+ES,Aragon,7,6,0,85.71,1,0
+AR,Buenos Aires,724,658,24,90.88,1,0
+GU,NULL,4,4,0,100.0,1,0
+CZ,Olomoucky kraj,209,130,0,62.2,1,0
+IT,Province of Florence,7,6,3,85.71,1,0
+CH,Schaffhausen,1,0,0,0.0,1,0
+US,North Carolina,46,32,31,69.57,1,0
+SI,Sveta Trojica v Slovenskih Goricah,1,1,0,100.0,1,0
+FR,BourgogneNULLFrancheNULLComte,62,37,2,59.68,1,0
+LI,Triesenberg,1,0,0,0.0,1,0
+VN,Tinh Kien Giang,17,10,0,58.82,1,0
+GD,NULL,1,0,0,0.0,1,0
+KZ,NurNULLSultan,49,31,3,63.27,1,0
+BR,Mato Grosso do Sul,74,39,1,52.7,1,0
+LV,Kraslavas novads,1,1,0,100.0,1,0
+HU,Vas,11,7,0,63.64,1,0
+ID,Bangka–Belitung Islands,5,2,0,40.0,1,0
+KW,Muhafazat al Jahra',2,2,0,100.0,1,0
+SI,Videm,1,1,0,100.0,1,0
+BE,NULL,270,213,22,78.89,1,0
+TW,Taichung City,2,2,0,100.0,1,0
+SI,Obcina Sentjernej,4,3,0,75.0,1,0
+PH,Central Luzon,48,28,39,58.33,1,0
+UA,Odessa,367,215,9,58.58,1,0
+CL,Maule Region,137,119,98,86.86,1,0
+US,Nebraska,50,39,24,78.0,1,0
+LT,Vilnius,45,41,1,91.11,1,0
+BN,Belait,1,1,0,100.0,1,0
+SI,Ljubljana,13,7,0,53.85,1,0
+MD,Raionul Edinet,2,0,0,0.0,1,0
+MV,NULL,4,2,0,50.0,1,0
+ID,Central Java,495,374,88,75.56,1,0
+SA,Tabuk Region,2,2,0,100.0,1,0
+DK,Central Jutland,93,58,10,62.37,1,0
+GH,Greater Accra Region,43,40,0,93.02,1,0
+LV,Kekava,27,21,0,77.78,1,0
+KZ,Karaganda,103,52,0,50.49,1,0
+AE,Imarat Umm al Qaywayn,1,1,0,100.0,1,0
+VN,Da Nang,2,2,0,100.0,1,0
+IT,Basilicate,9,3,0,33.33,1,0
+RO,Salaj,1,0,0,0.0,1,0
+PL,Lesser Poland,2962,1830,280,61.78,-1,1
+JE,NULL,2,1,0,50.0,1,0
+SE,Örebro County,1,0,0,0.0,1,0
+KZ,East Kazakhstan,1,0,0,0.0,1,0
+VE,Distrito Federal,71,67,6,94.37,1,0
+US,Wisconsin,35,23,13,65.71,1,0
+MO,NULL,27,12,3,44.44,1,0
+AR,Mendoza,13,9,3,69.23,1,0
+AS,Swains Island,1,1,0,100.0,1,0
+HN,Departamento de Cortes,5,5,0,100.0,1,0
+ZW,Mashonaland West,1,1,0,100.0,1,0
+IQ,Baghdad,3,3,0,100.0,1,0
+VE,Lara,5,5,0,100.0,1,0
+SK,Bratislava,71,62,4,87.32,1,0
+XK,NULL,1,1,0,100.0,1,0
+HU,SzabolcsNULLSzatmárNULLBereg,7,4,0,57.14,1,0
+DE,BadenNULLWürttemberg,496,297,11,59.88,1,0
+MY,Negeri Sembilan,2,2,0,100.0,1,0
+NG,Borno State,13,10,0,76.92,1,0
+SI,Litija,3,2,0,66.67,1,0
+KI,NULL,2,2,0,100.0,1,0
+IN,Jammu and Kashmir,46,39,0,84.78,1,0
+CZ,Ustecky kraj,187,89,1,47.59,1,0
+NO,Vestland,21203,7422,189,35.0,-1,1
+SN,NULL,8,5,0,62.5,1,0
+VE,Falcón,14,14,0,100.0,1,0
+KR,GyeonggiNULLdo,118,79,0,66.95,1,0
+VN,Tinh Binh GJinh,1,1,0,100.0,1,0
+BD,Khulna Division,13,8,0,61.54,1,0
+EE,Pärnumaa,2,2,0,100.0,1,0
+UA,Khmelnytskyy Oblast,146,104,0,71.23,1,0
+UA,Lviv Oblast,88,59,5,67.05,1,0
+LK,Western Province,6,6,0,100.0,1,0
+CO,NULL,105,86,10,81.9,1,0
+FR,CentreNULLVal de Loire,46,38,0,82.61,1,0
+IN,Maharashtra,4774,3398,67,71.18,-1,1
+CH,Neuchâtel,16,6,0,37.5,1,0
+UA,Zhytomyr,17,12,0,70.59,1,0
+LV,Dagda,1,1,0,100.0,1,0
+TM,Balkan,1,0,0,0.0,1,0
+CL,Region de Valparaiso,17,10,3,58.82,1,0
+QA,NULL,21,14,4,66.67,1,0
+RS,Belgrade,6,4,0,66.67,1,0
+AT,Carinthia,1,1,0,100.0,1,0
+NP,Province 2,3,1,0,33.33,1,0
+VN,Tinh Vinh Long,2,2,0,100.0,1,0
+RO,Harghita,22,22,0,100.0,1,0
+IS,Westfjords,1,0,0,0.0,1,0
+EG,Cairo Governorate,1,1,1,100.0,1,0
+AZ,Baku City,10,10,0,100.0,1,0
+TJ,Viloyati Sughd,7,7,0,100.0,1,0
+UG,Western Region,1,1,0,100.0,1,0
+BR,Mato Grosso,154,101,0,65.58,1,0
+EC,Provincia de Pichincha,36,21,0,58.33,1,0
+MX,México,22,22,6,100.0,1,0
+UA,Kharkivska Oblast,131,59,0,45.04,1,0
+CL,Los Lagos Region,17,9,0,52.94,1,0
+NL,Drenthe,82,61,3,74.39,1,0
+FR,Vienne,2,2,0,100.0,1,0
+DE,Brandenburg,49,39,0,79.59,1,0
+IN,Bihar,180,137,3,76.11,1,0
+MY,Pahang,4,4,0,100.0,1,0
+IN,Tripura,15,15,0,100.0,1,0
+CY,Larnaka,2,2,0,100.0,1,0
+ID,Bali,1651,1137,455,68.87,-1,1
+FR,SeineNULLSaintNULLDenis,5,3,0,60.0,1,0
+PH,Western Visayas,5,1,0,20.0,1,0
+AQ,NULL,1,1,0,100.0,1,0
+DE,Saarland,2797,1655,2,59.17,-1,1
+KH,Siem Reap,2,2,0,100.0,1,0
+AZ,Nakhichevan,10,10,0,100.0,1,0
+BN,NULL,2,2,0,100.0,1,0
+HR,SplitNULLDalmatia,7,7,0,100.0,1,0
+SZ,Shiselweni District,2,1,0,50.0,1,0
+LV,Aizpute,2,2,0,100.0,1,0
+US,Vermont,6,6,5,100.0,1,0
+EC,Provincia del Guayas,11,9,2,81.82,1,0
+UA,Rivnenska Oblast,177,108,0,61.02,1,0
+BY,Minsk City,22,14,4,63.64,1,0
+AT,NULL,71,54,4,76.06,1,0
+BR,Goias,161,100,0,62.11,1,0
+PK,Punjab,142,94,20,66.2,1,0
+JP,NULL,144,85,0,59.03,1,0
+NP,NULL,111,60,12,54.05,1,0
+BR,Maranhao,125,66,2,52.8,1,0
+US,Wyoming,5635,4180,0,74.18,-1,1
+US,Delaware,15,6,15,40.0,1,0
+MX,NULL,71,62,1,87.32,1,0
+MW,Central Region,1,1,0,100.0,1,0
+KE,Nairobi Province,88,67,4,76.14,1,0
+BG,NULL,1019,765,13,75.07,1,0
+US,Hawaii,9,5,9,55.56,1,0
+SI,Obcina Semic,1,1,0,100.0,1,0
+IN,National Capital Territory of Delhi,576,392,47,68.06,1,0
+TH,Khon Kaen,1,1,0,100.0,1,0
+MD,Ialoveni,2,2,0,100.0,1,0
+NG,Adamawa,3,3,2,100.0,1,0
+NP,Bagmati Province,27,16,2,59.26,1,0
+VN,Can Tho,1,1,0,100.0,1,0
+LT,Kaunas,12,12,0,100.0,1,0
+SI,Moravske Toplice,2,1,0,50.0,1,0
+MD,Floresti,1,1,0,100.0,1,0
+PL,Lublin,1938,1164,215,60.06,-1,1
+ZW,Masvingo Province,3,3,0,100.0,1,0
+SO,Banaadir,11,2,0,18.18,1,0
+NG,FCT,7,3,0,42.86,1,0
+LB,South Governorate,3,3,0,100.0,1,0
+KR,Incheon,30,19,1,63.33,1,0
+NZ,Gisborne,11,2,0,18.18,1,0
+IT,Piedmont,252,162,15,64.29,1,0
+TR,Amasya,11,10,2,90.91,1,0
+JP,Hyogo,1,1,0,100.0,1,0
+TR,Samsun,7,7,4,100.0,1,0
+PL,NULL,8060,4829,833,59.91,-1,1
+UA,Sumy,55,24,1,43.64,1,0
+VN,Ho Chi Minh,4,4,2,100.0,1,0
+CH,Zurich,124,54,0,43.55,1,0
+TR,NULL,3107,2574,427,82.85,-1,1
+US,Alaska,41,26,37,63.41,1,0
+AO,Malanje Province,1,1,0,100.0,1,0
+IT,Aosta Valley,2,1,0,50.0,1,0
+UA,Sebastopol City,246,136,36,55.28,1,0
+VN,Tây Ninh Province,1,1,0,100.0,1,0
+BF,Boucle du Mouhoun,1,1,0,100.0,1,0
+SI,Cerkvenjak,1,0,0,0.0,1,0
+TZ,Pemba South,25,10,0,40.0,1,0
+GB,Tower Hamlets,1,0,1,0.0,1,0
+KZ,North Kazakhstan,5,2,0,40.0,1,0
+LI,Balzers,2,1,0,50.0,1,0
+MD,Donduseni,5,4,0,80.0,1,0
+GE,Shida Kartli,1,1,0,100.0,1,0
+UA,Transcarpathia,138,75,4,54.35,1,0
+CO,Departamento de Sucre,1,0,0,0.0,1,0
+CR,NULL,5,5,0,100.0,1,0
+ZW,NULL,4,3,1,75.0,1,0
+SI,Ljutomer,16,6,0,37.5,1,0
+ID,West Nusa Tenggara,4,2,2,50.0,1,0
+ES,Barcelona,4,3,0,75.0,1,0
+IR,North Khorasan,6,3,0,50.0,1,0
+IS,NULL,36,27,0,75.0,1,0
+RO,Arges,56,40,0,71.43,1,0
+JP,Fukuoka,1,0,0,0.0,1,0
+AL,Tirana,16,6,1,37.5,1,0
+BR,Rio de Janeiro,5773,3727,75,64.56,-1,1
+DE,MecklenburgNULLVorpommern,2,1,0,50.0,1,0
+CI,NULL,26,25,0,96.15,1,0
+SE,Östergötland County,4,1,0,25.0,1,0
+BR,Alagoas,93,56,0,60.22,1,0
+CA,Ontario,162,116,27,71.6,1,0
+IR,Hormozgan,2,1,0,50.0,1,0
+JP,Miyagi,4,1,0,25.0,1,0
+BR,Santa Catarina,278,181,0,65.11,1,0
+RO,CarasNULLSeverin,10,8,0,80.0,1,0
+BD,Dhaka,189,152,0,80.42,1,0
+UA,Sumska Oblast,132,51,0,38.64,1,0
+ES,CastilleNULLLa Mancha,4,2,0,50.0,1,0
+SE,Västra Götaland County,24,14,0,58.33,1,0
+TH,Chiang Rai,7,7,0,100.0,1,0
+IR,Ilam Province,2,1,0,50.0,1,0
+ES,Murcia,201,124,6,61.69,1,0
+RU,Altai Krai,6,3,0,50.0,1,0
+BZ,NULL,29,27,0,93.1,1,0
+CH,Thurgau,13,1,0,7.69,1,0
+BR,Rondonia,59,29,0,49.15,1,0
+ES,Navarre,2,1,0,50.0,1,0
+AT,Styria,3,2,0,66.67,1,0
+US,Colorado,494,353,119,71.46,1,0
+CZ,Moravskoslezsky kraj,70,43,1,61.43,1,0
+SI,Nova Gorica,10,6,1,60.0,1,0
+MX,Mexico City,103,103,0,100.0,1,0
+GA,Estuaire,1,1,0,100.0,1,0
+CA,Saskatchewan,20,18,3,90.0,1,0
+PA,Provincia de Chiriqui,1,1,0,100.0,1,0
+CL,Los Ríos Region,14,8,5,57.14,1,0
+PL,Silesia,5653,3626,2192,64.14,-1,1
+IN,Assam,142,86,1,60.56,1,0
+GE,Kakheti,23,21,0,91.3,1,0
+BG,Vidin,7,7,0,100.0,1,0
+HU,BorsodNULLAbaújNULLZemplén,2,1,0,50.0,1,0
+CL,Region of Magallanes,7,4,3,57.14,1,0
+RU,NULL,122,86,18,70.49,1,0
+US,California,495,336,331,67.88,-1,1
+UA,Kherson Oblast,178,106,0,59.55,1,0
+NP,Sudurpashchim Pradesh,2,1,0,50.0,1,0
+IT,Provincia di Verona,9,2,0,22.22,1,0
+SI,Obcina Ravne na Koroskem,1,1,0,100.0,1,0
+CH,BaselNULLLandschaft,13,2,0,15.38,1,0
+TR,Mersin,16,16,16,100.0,1,0
+RU,Leningrad Oblast,2,2,0,100.0,1,0
+SR,Distrikt Paramaribo,1,0,0,0.0,1,0
+MD,NULL,59,42,0,71.19,1,0
+IN,Goa,35,25,0,71.43,1,0
+KW,NULL,13,9,2,69.23,1,0
+VE,Táchira,4,4,0,100.0,1,0
+PA,Provincia de Los Santos,2,2,0,100.0,1,0
+RO,Bihor,32,24,0,75.0,1,0
+MD,Nisporeni,3,3,1,100.0,1,0
+ID,West Kalimantan,14,11,0,78.57,1,0
+US,Connecticut,20,5,17,25.0,1,0
+RO,Timis,72,59,0,81.94,1,0
+LT,NULL,39,35,0,89.74,1,0
+BR,Amapa,9,6,0,66.67,1,0
+ES,Badajoz,3,0,0,0.0,1,0
+IR,Razavi Khorasan,7,5,0,71.43,1,0
+SE,NULL,46,30,9,65.22,1,0
+TH,Songkhla,12,10,3,83.33,1,0
+GB,Worcestershire,6,4,0,66.67,1,0
+MX,Jalisco,12,12,0,100.0,1,0
+CH,Ticino,13,4,1,30.77,1,0
+TL,NULL,6,4,0,66.67,1,0
+CO,Quindio Department,31,21,0,67.74,1,0
+BG,Sofia,21,19,0,90.48,1,0
+AU,Tasmania,27,15,0,55.56,1,0
+VN,Tinh Tuyen Quang,1,1,0,100.0,1,0
+DO,Provincia de Santiago,16,6,0,37.5,1,0
+IR,Qom Province,7,0,0,0.0,1,0
+ZA,Gauteng,16,14,0,87.5,1,0
+BF,CentreNULLEst,9,8,0,88.89,1,0
+BD,Dhaka Division,1390,1353,0,97.34,-1,1
+NI,Departamento de Rivas,1,0,0,0.0,1,0
+HN,Departamento de Colon,2,2,0,100.0,1,0
+KZ,Almaty Oblysy,2,2,2,100.0,1,0
+PL,KujawskoNULLPomorskie,1174,698,219,59.45,-1,1
+DK,Zealand,81,48,1,59.26,1,0
+MD,Raionul Ocnita,4,4,0,100.0,1,0
+ID,East Java,875,556,51,63.54,1,0
+PL,Greater Poland,1801,1141,102,63.35,-1,1
+TH,Prachuap Khiri Khan,1,1,0,100.0,1,0
+CO,Departamento de Cordoba,7,4,0,57.14,1,0
+ES,Santa Cruz de Tenerife,8,4,0,50.0,1,0
+JP,Oita,1,1,0,100.0,1,0
+IN,Uttar Pradesh,601,424,84,70.55,1,0
+BR,Ceara,446,284,2,63.68,1,0
+BG,Smolyan,74,70,0,94.59,1,0
+KW,Hawalli,6,4,0,66.67,1,0
+CL,NULL,277,234,127,84.48,1,0
+IT,EmiliaNULLRomagna,19,12,0,63.16,1,0
+TD,NULL,3,0,0,0.0,1,0
+GE,K'alak'i T'bilisi,57,54,1,94.74,1,0
+PH,Northern Mindanao,11,2,0,18.18,1,0
+JO,NULL,14,10,0,71.43,1,0
+MN,South Khangay,1,1,0,100.0,1,0
+NP,Lumbini Province,24,11,0,45.83,1,0
+UZ,Tashkent Region,2,2,0,100.0,1,0
+FR,AuvergneNULLRhoneNULLAlpes,220,142,14,64.55,1,0
+MD,Drochia,1,1,0,100.0,1,0
+ID,Banten,461,314,55,68.11,1,0
+UA,Volynska Oblast,77,47,0,61.04,1,0
+CZ,Karlovarsky kraj,3,3,0,100.0,1,0
+TR,Balikesir,9,9,5,100.0,1,0
+VN,Tinh Lai Chau,2,0,0,0.0,1,0
+KR,GyeongsangbukNULLdo,13,7,0,53.85,1,0
+CO,Departamento del Cauca,20,16,0,80.0,1,0
+ID,Central Sulawesi,34,7,5,20.59,1,0
+LI,Gamprin,1,1,0,100.0,1,0
+RU,Kemerovo Oblast,1,0,0,0.0,1,0
+UA,Luhanska Oblast,101,56,0,55.45,1,0
+NG,Oyo State,5,3,1,60.0,1,0
+LU,NULL,53,31,1,58.49,1,0
+IR,Fars,10,4,0,40.0,1,0
+BR,Bahia,603,394,11,65.34,1,0
+JO,Karak,1,1,0,100.0,1,0
+IN,Arunachal Pradesh,1,1,0,100.0,1,0
+ES,Las Palmas,29,8,0,27.59,1,0
+CN,Guangdong,5,5,5,100.0,1,0
+BE,Flanders,14,9,0,64.29,1,0
+SE,Jönköping,1,1,0,100.0,1,0
+NO,Nordland,13036,4233,167,32.47,-1,1
+UA,Zaporizhzhya Oblast,850,555,9,65.29,1,0
+RO,Covasna,41,36,0,87.8,1,0
+SE,Skåne County,10,7,0,70.0,1,0
+BT,NULL,6,4,0,66.67,1,0
+DE,RheinlandNULLPfalz,2965,1854,71,62.53,-1,1
+SI,Hrastnik,4,1,0,25.0,1,0
+BW,Gaborone,9,4,0,44.44,1,0
+SI,Brda,2,1,0,50.0,1,0
+US,New York,619,470,242,75.93,-1,1
+RU,Sakhalin Oblast,1,1,0,100.0,1,0
+NG,Ogun State,3,2,0,66.67,1,0
+UA,Crimea,472,281,11,59.53,1,0
+PF,NULL,1,1,0,100.0,1,0
+SA,AlNULLQassim Region,2,2,0,100.0,1,0
+KR,JejuNULLdo,3,3,0,100.0,1,0
+MA,RabatNULLSaleNULLKenitra,4,4,0,100.0,1,0
+NP,Karnali Pradesh,11,8,0,72.73,1,0
+MY,Perak,13,6,3,46.15,1,0
+AR,Chaco,123,81,0,65.85,1,0
+GB,Northern Ireland,24,16,0,66.67,1,0
+FR,HautsNULLdeNULLFrance,205,153,6,74.63,1,0
+PY,Departamento de la Cordillera,1,1,0,100.0,1,0
+SE,Värmland County,2,1,0,50.0,1,0
+IR,Chaharmahal and Bakhtiari Province,16,7,0,43.75,1,0
+BR,Rio Grande do Sul,409,242,2,59.17,1,0
+SE,Stockholm County,7,6,0,85.71,1,0
+BA,Federation of B&H,20,20,4,100.0,1,0
+BG,Blagoevgrad,94,79,0,84.04,1,0
+MV,Northern Ari Atoll,4,4,0,100.0,1,0
+US,New Jersey,442,335,389,75.79,-1,1
+KR,Daejeon,12,9,0,75.0,1,0
+IT,Tuscany,46,15,0,32.61,1,0
+PE,Lima,58,31,0,53.45,1,0
+RS,Vojvodina,2,1,0,50.0,1,0
+PL,Swietokrzyskie,332,229,19,68.98,1,0
+BR,Parana,4316,2941,35,68.14,-1,1
+IE,Leinster,203,103,1,50.74,1,0
+RO,Ialomita,56,48,0,85.71,1,0
+IT,Province of Arezzo,9,2,0,22.22,1,0
+UA,Zhytomyrska Oblast,83,47,0,56.63,1,0
+NI,Departamento de Carazo,1,1,0,100.0,1,0
+LB,Mohafazat MontNULLLiban,16,10,8,62.5,1,0
+RU,Nizhny Novgorod Oblast,20,9,9,45.0,1,0
+MK,NULL,14,13,0,92.86,1,0
+BR,Rio Grande do Norte,184,135,4,73.37,1,0
+BE,Limburg Province,5,2,0,40.0,1,0
+DO,Provincia de Santo Domingo,8,1,0,12.5,1,0
+RU,Dagestan,1,1,0,100.0,1,0
+GR,South Aegean,4,3,0,75.0,1,0
+BG,Razgrad,4,4,0,100.0,1,0
+SK,Trencin,2,1,0,50.0,1,0
+ES,Catalonia,266,119,18,44.74,1,0
+RO,Braila,3,2,0,66.67,1,0
+KZ,Qostanay Oblysy,27,15,0,55.56,1,0
+ES,Alicante,31,19,0,61.29,1,0
+AO,Bengo Province,3,0,0,0.0,1,0
+RU,YamaloNULLNenets,1,1,0,100.0,1,0
+RO,Iasi,36,31,0,86.11,1,0
+CO,Departamento del Valle del Cauca,1,1,0,100.0,1,0
+IT,Provincia di Varese,11,6,0,54.55,1,0
+IT,Abruzzo,1,0,0,0.0,1,0
+GB,Cardiff,6,3,6,50.0,1,0
+US,Utah,36,27,14,75.0,1,0
+PL,Lódz Voivodeship,8964,5873,138,65.52,-1,1
+FJ,Western,2,2,0,100.0,1,0
+DZ,Bouira,3,3,0,100.0,1,0
+NI,NULL,1,1,0,100.0,1,0
+ES,Balearic Islands,195,101,0,51.79,1,0
+IT,Lombardy,609,418,8,68.64,1,0
+SI,Obcina Ziri,3,0,0,0.0,1,0
+RO,Dolj,36,26,0,72.22,1,0
+PF,Iles du Vent,4,4,0,100.0,1,0
+DK,South Denmark,61,25,11,40.98,1,0
+LI,Vaduz,2,0,0,0.0,1,0
+UA,Volyn,62,37,0,59.68,1,0
+BA,Republika Srpska,13,12,4,92.31,1,0
+TR,Karaman,7,2,7,28.57,1,0
+PS,NULL,10,10,1,100.0,1,0
+NI,Departamento de Rio San Juan,1,1,0,100.0,1,0
+AO,NULL,80,49,0,61.25,1,0
+BH,NULL,2,1,0,50.0,1,0
+SG,NULL,88,64,0,72.73,1,0
+ID,South Kalimantan,20,13,0,65.0,1,0
+TR,Diyarbakir,1,1,0,100.0,1,0
+IT,NULL,327,201,33,61.47,1,0
+VE,Carabobo,2,2,0,100.0,1,0
+AF,NULL,22,17,1,77.27,1,0
+BA,NULL,12,12,0,100.0,1,0
+US,Indiana,11,8,3,72.73,1,0
+ID,Southeast Sulawesi,4,4,0,100.0,1,0
+IS,Capital Region,31,22,1,70.97,1,0
+IR,Bushehr Province,136,65,0,47.79,1,0
+CY,Ammochostos,3,3,0,100.0,1,0
+CA,New Brunswick,15,10,2,66.67,1,0
+BM,Saint George,1,1,0,100.0,1,0
+PR,NULL,90,78,0,86.67,1,0
+SK,Banska Bystrica,79,29,0,36.71,1,0
+ES,Andalusia,25,10,0,40.0,1,0
+NG,Kogi State,1,0,0,0.0,1,0
+TZ,Tanga,4,2,0,50.0,1,0
+US,Minnesota,38,24,30,63.16,1,0
+ID,Riau,25,19,5,76.0,1,0
+US,Illinois,413,311,309,75.3,-1,1
+SI,Obcina HoceNULLSlivnica,1,1,0,100.0,1,0
+KH,Kandal,1,1,0,100.0,1,0
+GT,NULL,16,8,2,50.0,1,0
+BD,Sylhet Division,3,2,0,66.67,1,0
+SE,Norrbotten County,1,0,0,0.0,1,0
+KR,Seoul,44,23,0,52.27,1,0
+RO,Bucuresti,2902,2625,1643,90.45,-1,1
+UZ,Karakalpakstan,1,1,0,100.0,1,0
+IN,Chhattisgarh,43,37,0,86.05,1,0
+SI,Ankaran,1,1,0,100.0,1,0
+CH,Saint Gallen,9,2,0,22.22,1,0
+MD,Cimislia,4,1,0,25.0,1,0
+ID,East Kalimantan,16,10,0,62.5,1,0
+GH,Bono,1,1,0,100.0,1,0
+DO,NULL,7,2,0,28.57,1,0
+UG,Central Region,5,4,1,80.0,1,0
+TJ,Viloyati Khatlon,4,3,0,75.0,1,0
+IQ,Basra,1,0,0,0.0,1,0
+GR,Attica,8,5,0,62.5,1,0
+CH,Solothurn,3,3,0,100.0,1,0
+US,Washington,456,349,270,76.54,-1,1
+LB,Mohafazat Beqaa,1,1,0,100.0,1,0
+SI,Beltinci,2,0,0,0.0,1,0
+MM,NULL,71,55,23,77.46,1,0
+MT,NULL,14,14,0,100.0,1,0
+RU,Irkutsk Oblast,2,2,0,100.0,1,0
+NZ,West Coast,2,2,0,100.0,1,0
+RO,BistritaNULLNasaud,24,18,0,75.0,1,0
+NI,Departamento de Matagalpa,1,0,0,0.0,1,0
+SI,Dobrovnik,1,0,0,0.0,1,0
+TR,Izmir,99,91,0,91.92,1,0
+GB,Luton,13,13,0,100.0,1,0
+BQ,Bonaire,1,1,0,100.0,1,0
+US,Georgia,98,71,62,72.45,1,0
+SI,Obcina Skofljica,3,3,0,100.0,1,0
+SA,NULL,85,83,0,97.65,1,0
+CZ,Zlín,16,10,2,62.5,1,0
+CA,Nova Scotia,7,3,2,42.86,1,0
+PG,NULL,12,10,3,83.33,1,0
+KY,NULL,43,21,0,48.84,1,0
+DE,Saxony,100,43,9,43.0,1,0
+SA,Eastern Province,10,10,0,100.0,1,0
+MD,Raionul Stefan Voda,1,1,0,100.0,1,0
+MM,Rangoon,12,12,0,100.0,1,0
+BG,Varna,4,3,0,75.0,1,0
+BM,NULL,3,3,0,100.0,1,0
+US,Mississippi,1010,774,12,76.63,1,0
+RO,Tulcea,12,10,0,83.33,1,0
+UA,Kyiv Oblast,621,367,1,59.1,1,0
+SI,Kamnik,23,10,0,43.48,1,0
+NG,Edo,17,6,0,35.29,1,0
+MY,Penang,7,4,3,57.14,1,0
+MX,Nuevo León,98,95,0,96.94,1,0
+IQ,Nineveh,9,8,0,88.89,1,0
+US,Florida,1490,1048,150,70.34,-1,1
+BJ,NULL,3,1,0,33.33,1,0
+AR,Chubut,2,0,2,0.0,1,0
+LA,NULL,13,12,0,92.31,1,0
+RO,Vaslui,18,17,0,94.44,1,0
+IR,NULL,3669,1941,31,52.9,-1,1
+IN,Karnataka,1275,850,0,66.67,1,0
+UA,Ternopil Oblast,4633,3083,0,66.54,-1,1
+BG,Dobrich,9,7,0,77.78,1,0
+BG,Pazardzhik,3,3,0,100.0,1,0
+BG,Shumen,26,20,0,76.92,1,0
+US,West Virginia,30,21,27,70.0,1,0
+RU,KhantyNULLMansia,63,63,42,100.0,1,0
+IQ,Erbil,28,23,1,82.14,1,0
+QA,Al Khor,1,1,0,100.0,1,0
+PL,WarmiaNULLMasuria,2585,1755,66,67.89,-1,1
+IR,Zanjan,11,5,1,45.45,1,0
+SA,Mecca Region,93,73,4,78.49,1,0
+CZ,Plzensky kraj,43,27,0,62.79,1,0
+BS,New Providence District,2,2,2,100.0,1,0
+AU,Northern Territory,7,4,0,57.14,1,0
+MM,Shan State,18,11,0,61.11,1,0
+GF,NULL,13,9,0,69.23,1,0
+SV,Departamento de San Salvador,33,29,3,87.88,1,0
+UG,Eastern Region,5,5,0,100.0,1,0
+BG,Veliko Tarnovo,24,17,0,70.83,1,0
+CL,Ñuble,5,0,0,0.0,1,0
+CZ,Pardubicky kraj,186,99,3,53.23,1,0
+MK,Struga,1,1,1,100.0,1,0
+IT,Apulia,19,15,4,78.95,1,0
+SI,Izola,1,1,1,100.0,1,0
+IR,Isfahan,12,3,0,25.0,1,0
+BR,Tocantins,61,38,1,62.3,1,0
+LT,Telsiai,4,3,0,75.0,1,0
+LB,Beyrouth,5,5,4,100.0,1,0
+LI,Schellenberg,2,1,1,50.0,1,0
+CW,NULL,14,13,1,92.86,1,0
+GB,Scotland,59,32,0,54.24,1,0
+CL,Coquimbo Region,6,4,0,66.67,1,0
+ES,Cantabria,4,0,0,0.0,1,0
+GD,Saint George,11,6,0,54.55,1,0
+RO,Olt,12,11,0,91.67,1,0
+DO,Provincia de Hermanas Mirabal,6,3,0,50.0,1,0
+IT,TrentinoNULLAlto Adige,22,21,1,95.45,1,0
+PL,Mazovia,18312,9215,1861,50.32,-1,1
+RO,Prahova,86,73,0,84.88,1,0
+CN,NULL,157,143,34,91.08,1,0
+CZ,Liberecky kraj,13,9,0,69.23,1,0
+AU,Victoria,367,269,27,73.3,1,0
+RO,Teleorman,35,32,0,91.43,1,0
+BM,Pembroke Parish,1,1,0,100.0,1,0
+IT,Sicily,12,7,3,58.33,1,0
+UA,Cherkasy Oblast,159,94,24,59.12,1,0
+CH,Valais,26,15,2,57.69,1,0
+KH,Phnom Penh,20,17,1,85.0,1,0
+ZA,KwaZuluNULLNatal,8,7,3,87.5,1,0
+AW,NULL,4,4,0,100.0,1,0
+SL,Western Area,5,5,0,100.0,1,0
+KE,NULL,14,13,0,92.86,1,0
+FR,Var,2,1,0,50.0,1,0
+FI,Central Finland,7,4,0,57.14,1,0
+DE,Bremen,5,3,0,60.0,1,0
+BY,NULL,11,2,0,18.18,1,0
+LV,Jurmala,2,2,0,100.0,1,0
+RO,Maramures,52,43,0,82.69,1,0
+CH,Bern,29,12,0,41.38,1,0
+CY,Pafos,5,4,0,80.0,1,0
+AR,Entre Rios,30,19,1,63.33,1,0
+SK,Presov,21,11,0,52.38,1,0
+AU,NULL,9234,6409,1161,69.41,-1,1
+KR,JeollanamNULLdo,6,2,0,33.33,1,0
+IT,Calabria,20,14,6,70.0,1,0
+DE,Hamburg,2,1,0,50.0,1,0
+EE,Jõgevamaa,6,6,0,100.0,1,0
+SI,Markovci,10,5,0,50.0,1,0
+DE,Thuringia,25,17,14,68.0,1,0
+BE,Antwerp Province,5,4,0,80.0,1,0
+SI,Gorenja VasNULLPoljane,9,5,0,55.56,1,0
+PL,Podlasie,322,184,1,57.14,1,0
+BG,Haskovo,16,14,0,87.5,1,0
+CZ,Hlavni mesto Praha,2363,1338,21,56.62,-1,1
+MD,Sîngerei,4,4,0,100.0,1,0
+UA,Chernivtsi Oblast,184,113,1,61.41,1,0
+US,District of Columbia,72,49,0,68.06,1,0
+TO,Tongatapu,1,1,0,100.0,1,0
+MZ,Cidade de Maputo,8,7,0,87.5,1,0
+UZ,NULL,4,1,0,25.0,1,0
+PY,Departamento del Alto Parana,15,13,0,86.67,1,0
+KW,Al A?madi,5,3,2,60.0,1,0
+NZ,Otago,1,0,0,0.0,1,0
+IN,Andhra Pradesh,193,125,5,64.77,1,0
+SI,Obcina Sveti Andraz v Slovenskih Goricah,3,2,0,66.67,1,0
+SC,Bel Air,53,53,0,100.0,1,0
+JP,Osaka,200,113,0,56.5,1,0
+IL,Southern District,12,3,0,25.0,1,0
+UA,Luhansk,35,20,0,57.14,1,0
+RO,Botosani,27,22,0,81.48,1,0
+RE,NULL,9,4,1,44.44,1,0
+AF,Kabul,3,3,0,100.0,1,0
+BR,Piaui,114,71,1,62.28,1,0
+BR,Pernambuco,238,165,1,69.33,1,0
+IR,Kermanshah Province,10,8,0,80.0,1,0
+ID,Jambi,6,6,2,100.0,1,0
+MX,Hidalgo,55,52,5,94.55,1,0
+RU,Krasnoyarskiy Kray,25,21,0,84.0,1,0
+IQ,Sulaymaniyah,6,1,0,16.67,1,0
+GB,NULL,13465,6903,533,51.27,-1,1
+SI,Sentjur,3,3,0,100.0,1,0
+IN,Uttarakhand,540,388,20,71.85,1,0
+RO,Buzau,87,68,20,78.16,1,0
+MW,Northern Region,11,11,0,100.0,1,0
+TR,Çankiri,2,2,2,100.0,1,0
+IR,Yazd Province,14,5,2,35.71,1,0
+DO,Provincia de Barahona,5,4,0,80.0,1,0
+SI,Obcina Mezica,1,1,0,100.0,1,0
+UZ,Qashqadaryo,1,1,0,100.0,1,0
+LV,Daugavpils,2,1,0,50.0,1,0
+DE,Hesse,1342,839,42,62.52,1,0
+KW,Mubarak al Kabir,3,2,0,66.67,1,0
+SI,Lenart,2,2,0,100.0,1,0
+PH,Quezon,26,18,1,69.23,1,0
+IQ,Al Anbar,7,7,7,100.0,1,0
+HK,Central and Western District,39,28,0,71.79,1,0
+BM,Hamilton city,12,12,0,100.0,1,0
+RO,Satu Mare,49,40,0,81.63,1,0
+SX,NULL,2,2,0,100.0,1,0
+CZ,NULL,2642,1507,55,57.04,-1,1
+CL,Aysén,213,213,213,100.0,-1,1
+HN,Departamento de Francisco Morazan,18,18,0,100.0,1,0
+KH,NULL,35,32,2,91.43,1,0
+BD,Mymensingh Division,10,4,0,40.0,1,0
+RU,Udmurtiya Republic,4,3,0,75.0,1,0
+IN,Madhya Pradesh,289,191,15,66.09,1,0
+VE,Nueva Esparta,8,5,0,62.5,1,0
+PY,NULL,76,35,3,46.05,1,0
+TZ,NULL,19,10,0,52.63,1,0
+CH,Appenzell Ausserrhoden,11,1,0,9.09,1,0
+PA,NULL,25,15,1,60.0,1,0
+UA,Kirovohrad Oblast,74,55,4,74.32,1,0
+CL,Tarapacá,2,2,0,100.0,1,0
+IN,NULL,3147,2066,58,65.65,-1,1
+EC,Provincia de Manabi,45,34,0,75.56,1,0
+IN,Punjab,85,56,0,65.88,1,0
+HU,Budapest,85,46,0,54.12,1,0
+NL,Limburg,41,32,2,78.05,1,0
+SI,Koper,5,2,1,40.0,1,0
+BD,Chittagong,111,105,0,94.59,1,0
+MD,Anenii Noi,22,19,0,86.36,1,0
+RO,Suceava,88,80,51,90.91,1,0
+TH,Phuket,1,1,0,100.0,1,0
+LV,Aluksnes Novads,4,2,4,50.0,1,0
+GT,Departamento de Sacatepequez,3,1,0,33.33,1,0
+BQ,Saba,1,1,0,100.0,1,0
+BR,Para,329,220,0,66.87,1,0
+SE,Jämtland County,3,2,0,66.67,1,0
+RO,Brasov,38,32,0,84.21,1,0
+JP,Aichi,16,13,0,81.25,1,0
+BD,Rangpur,10,8,0,80.0,1,0
+TR,Denizli,7,2,0,28.57,1,0
+IN,Manipur,7,6,0,85.71,1,0
+AL,NULL,38,34,23,89.47,1,0
+AF,Parwan,1,1,0,100.0,1,0
+GR,NULL,289,199,12,68.86,1,0
+BJ,Littoral,2,2,0,100.0,1,0
+PL,Lower Silesia,1287,862,103,66.98,-1,1
+AR,Corrientes,1,0,0,0.0,1,0
+ML,NULL,8,8,0,100.0,1,0
+US,Oregon,26,21,10,80.77,1,0
+ID,Aceh,64,54,46,84.38,1,0
+NL,Flevoland,37,27,0,72.97,1,0
+RO,Constanta,30,25,15,83.33,1,0
+BE,Flemish Brabant Province,3,2,0,66.67,1,0
+LV,Engure,1,1,0,100.0,1,0
+SK,Nitra,2,2,0,100.0,1,0
+IN,Kerala,238,150,0,63.03,1,0
+BG,Plovdiv,52,37,0,71.15,1,0
+IN,Telangana,140,85,0,60.71,1,0
+LV,Nereta,2,2,0,100.0,1,0
+IT,Rome,32,14,4,43.75,1,0
+LV,Ikškile,1,1,0,100.0,1,0
+NG,Zamfara State,7,2,0,28.57,1,0
+US,Alabama,135,109,38,80.74,1,0
+TR,Istanbul,392,343,48,87.5,1,0
+FR,AlpesNULLMaritimes,9,7,0,77.78,1,0
+MD,Rezina,7,4,0,57.14,1,0
+ES,Galicia,1,1,0,100.0,1,0
+ID,Lampung,61,33,11,54.1,1,0
+VN,Tinh Quang Nam,3,3,0,100.0,1,0
+RO,Sibiu,14,9,0,64.29,1,0
+SI,Mestna Obcina Novo mesto,1,0,0,0.0,1,0
+ME,NULL,10,9,0,90.0,1,0
+SI,Obcina Sencur,16,10,0,62.5,1,0
+MZ,Maputo Province,1,0,0,0.0,1,0
+SI,Ilirska Bistrica,1,1,0,100.0,1,0
+SI,Kranj,2,2,0,100.0,1,0
+BG,Sliven,5,5,0,100.0,1,0
+GR,Nomos Argolidos,6,3,0,50.0,1,0
+BR,Minas Gerais,2075,1372,23,66.12,-1,1
+DO,Puerto Plata,96,63,0,65.63,1,0
+TD,Tibesti Region,1,1,0,100.0,1,0
+IE,Ulster,7,4,0,57.14,1,0
+SE,Halland County,1,1,0,100.0,1,0
+US,Michigan,229,157,83,68.56,1,0
+ID,South Sumatra,21,18,17,85.71,1,0
+LV,Rucavas Novads,5,5,0,100.0,1,0
+BO,Departamento de Santa Cruz,1,1,0,100.0,1,0
+GB,England,1502,697,93,46.4,-1,1
+SC,NULL,26,22,0,84.62,1,0
+CO,Cundinamarca,1,1,1,100.0,1,0
+VU,NULL,7,3,0,42.86,1,0
+LT,Alytus,1,0,0,0.0,1,0
+IR,West Azerbaijan Province,19,4,0,21.05,1,0
+SD,NULL,12,4,1,33.33,1,0
+KZ,NULL,132,78,3,59.09,1,0
+BM,Paget,1,1,0,100.0,1,0
+UG,NULL,9,6,0,66.67,1,0
+BD,Rajshahi,4,3,0,75.0,1,0
+NG,Sokoto State,1,0,0,0.0,1,0
+TR,Ankara,58,28,0,48.28,1,0
+LT,Vilnius City Municipality,5,4,0,80.0,1,0
+FR,Gironde,7,5,0,71.43,1,0
+TK,Nukunonu,1,0,0,0.0,1,0
+SM,NULL,14,11,0,78.57,1,0
+NZ,Wellington,65,40,0,61.54,1,0
+MD,Chi?inau Municipality,19,16,3,84.21,1,0
+CH,Fribourg,2,2,0,100.0,1,0
+US,Arizona,34,26,13,76.47,1,0
+RO,Galati,2,2,0,100.0,1,0
+SI,Kanal,18,14,0,77.78,1,0
+GB,Barnet,6,5,0,83.33,1,0
+TH,Saraburi,1,1,0,100.0,1,0
+SI,Obcina Ivancna Gorica,2,0,0,0.0,1,0
+ES,Extremadura,1,1,0,100.0,1,0
+JO,Irbid,25,19,0,76.0,1,0
+UA,Kharkiv,39,17,0,43.59,1,0
+SI,Obcina Jursinci,4,1,0,25.0,1,0
+CZ,Kraj Vysocina,160,63,0,39.38,1,0
+AU,Western Australia,59,35,0,59.32,1,0
+IN,Union Territory of Puducherry,22,12,0,54.55,1,0
+AR,Misiones,39,23,5,58.97,1,0
+IN,West Bengal,3509,2342,36,66.74,-1,1
+GB,Southwark,3,3,1,100.0,1,0
+SK,Kosice,5,5,0,100.0,1,0
+MV,Kaafu Atoll,18,12,0,66.67,1,0
+PA,Provincia de Panama,13,9,0,69.23,1,0
+ID,Papua,24,23,9,95.83,1,0
+BO,NULL,20,19,9,95.0,1,0
+BD,NULL,1646,1616,48,98.18,-1,1
+RO,Ilfov,48,41,4,85.42,1,0
+MY,Kuala Lumpur,35,28,0,80.0,1,0
+UZ,Tashkent,9,6,0,66.67,1,0
+IT,Campania,45,14,0,31.11,1,0
+PH,Metro Manila,142,81,21,57.04,1,0
+GR,Thessaloniki,4,1,0,25.0,1,0
+RU,Tver’ Oblast,5,5,0,100.0,1,0
+DE,NULL,6990,4300,312,61.52,-1,1
+LV,Adaži,1,1,0,100.0,1,0
+FO,NULL,9,4,0,44.44,1,0
+MD,Leova,3,2,0,66.67,1,0
+TG,Savanes,2,2,0,100.0,1,0
+UA,IvanoNULLFrankivsk Oblast,462,291,9,62.99,1,0
+LI,Eschen,4,3,0,75.0,1,0
+PH,Bicol,276,153,4,55.43,1,0
+IN,Rajasthan,305,228,14,74.75,1,0
+MX,Yucatán,9,8,0,88.89,1,0
+HR,City of Zagreb,84,80,3,95.24,1,0
+US,Nevada,2,1,0,50.0,1,0
+ID,North Sumatra,108,86,59,79.63,1,0
+MG,NULL,5,4,0,80.0,1,0
+NP,Gandaki Pradesh,39,14,3,35.9,1,0
+GB,Swindon,1,0,0,0.0,1,0
+FR,Pays de la Loire,70,46,0,65.71,1,0
+DE,Free and Hanseatic City of Hamburg,203,118,10,58.13,1,0
+AR,Santa Cruz,7,5,0,71.43,1,0
+PK,NULL,116,64,1,55.17,1,0
+CO,Bogota D.C.,82,47,0,57.32,1,0
+IT,Molise,1,1,0,100.0,1,0
+BR,Roraima,9,4,0,44.44,1,0
+BG,SofiaNULLCapital,224,177,5,79.02,1,0
+RU,Bryansk Oblast,7,4,2,57.14,1,0
+IT,Liguria,1,0,0,0.0,1,0
+CH,Jura,26,4,3,15.38,1,0
+HN,Departamento de Valle,3,3,0,100.0,1,0
+SO,NULL,7,2,1,28.57,1,0
+MD,Falesti,8,6,0,75.0,1,0
+RU,Khabarovsk,1,0,0,0.0,1,0
+DK,Capital Region,121,86,13,71.07,1,0
+NI,Departamento de Granada,1,0,0,0.0,1,0
+NL,South Holland,235,141,9,60.0,1,0
+DE,SchleswigNULLHolstein,97,48,12,49.48,1,0
+LV,Riga,61,37,0,60.66,1,0
+MM,Tanintharyi Region,6,1,0,16.67,1,0
+MU,Black River District,2,2,0,100.0,1,0
+EG,NULL,30,21,5,70.0,1,0
+SE,Västernorrland County,18,4,0,22.22,1,0
+IE,Munster,69,35,0,50.72,1,0
+NG,Niger State,3,0,0,0.0,1,0
+HT,Departement de l'Ouest,3,3,0,100.0,1,0
+BG,Burgas,87,84,0,96.55,1,0
+US,South Dakota,29,23,23,79.31,1,0
+IL,Haifa,21,6,0,28.57,1,0
+NL,Gelderland,53,31,8,58.49,1,0
+KW,Al Asimah,15,11,0,73.33,1,0
+US,Idaho,14,11,11,78.57,1,0
+CH,NULL,445,194,6,43.6,1,0
+MD,Transnistria,2,2,0,100.0,1,0
+IE,NULL,116,69,0,59.48,1,0
+MW,Southern Region,2,2,1,100.0,1,0
+CR,Provincia de Guanacaste,5,5,0,100.0,1,0
+LI,Planken,7,2,2,28.57,1,0
+KZ,Mangistauskaya Oblast',7,2,0,28.57,1,0
+HR,KoprivinicaNULLKrizevci,28,28,1,100.0,1,0
+RO,Vrancea,7,5,0,71.43,1,0
+HU,Somogy megye,3,2,0,66.67,1,0
+CL,Atacama,5,2,0,40.0,1,0
+NL,Overijssel,39,25,0,64.1,1,0
+BG,Ruse,18,17,0,94.44,1,0
+IR,Tehran,146,72,1,49.32,1,0
+PH,Cagayan Valley,1,1,0,100.0,1,0
+ID,Yogyakarta,119,80,28,67.23,1,0
+LV,Babite,2,2,0,100.0,1,0
+KR,GyeongsangnamNULLdo,1,0,0,0.0,1,0
+AT,Vorarlberg,3,3,0,100.0,1,0
+GI,NULL,24,18,2,75.0,1,0
+AR,Santa Fe,53,25,5,47.17,1,0
+SI,Grosuplje,5,0,0,0.0,1,0
+PA,Provincia de Bocas del Toro,1,1,0,100.0,1,0
+SI,Ig,1,0,0,0.0,1,0
+MU,Riviere du Rempart District,3,2,0,66.67,1,0
+US,Massachusetts,20,14,13,70.0,1,0
+TW,New Taipei,38,30,3,78.95,1,0
+FI,Southwest Finland,1,0,0,0.0,1,0
+IN,Himachal Pradesh,53,39,0,73.58,1,0
+BG,Stara Zagora,8,7,0,87.5,1,0
+ES,Valencia,51,25,0,49.02,1,0
+IL,Northern District,39,21,19,53.85,1,0
+IN,Andaman and Nicobar,2,2,0,100.0,1,0
+SK,Trnava,1,1,0,100.0,1,0
+PK,Sindh,159,115,58,72.33,1,0
+BI,NULL,4,0,0,0.0,1,0
+US,Louisiana,44,28,37,63.64,1,0
+NL,Provincie Overijssel,6,2,0,33.33,1,0
+MR,NULL,2,1,0,50.0,1,0
+RU,Chelyabinsk Oblast,1,1,0,100.0,1,0
+SI,Obcina Ajdovscina,1,1,0,100.0,1,0
+RS,NULL,167,101,0,60.48,1,0
+AE,NULL,28,24,12,85.71,1,0
+ID,North Maluku,10,6,0,60.0,1,0
+ES,Malaga,3,1,0,33.33,1,0
+SI,Cerklje na Gorenjskem,1,0,0,0.0,1,0
+PY,Departamento del Amambay,1,1,0,100.0,1,0
+AR,San Juan,9,7,4,77.78,1,0
+KR,GangwonNULLdo,7,5,0,71.43,1,0
+GE,SamtskheNULLJavakheti,2,2,0,100.0,1,0
+UY,NULL,1,1,0,100.0,1,0
+NL,North Holland,497,329,32,66.2,1,0
+US,Maryland,56,43,1,76.79,1,0
+PW,NULL,1,1,0,100.0,1,0
+NC,North Province,6,4,0,66.67,1,0
+IL,Jerusalem,13,4,2,30.77,1,0
+CA,Yukon,2,2,0,100.0,1,0
+EE,Tartu,1,1,0,100.0,1,0
+LI,Triesen,3,2,0,66.67,1,0
+HR,PrimorskoNULLGoranska Zupanija,50,50,0,100.0,1,0
+FR,BouchesNULLduNULLRhône,8,6,0,75.0,1,0
+CO,Atlántico,20,10,0,50.0,1,0
+FR,Hérault,8,5,0,62.5,1,0
+LS,ButhaNULLButhe,4,3,0,75.0,1,0
+BG,Targovishte,5,4,0,80.0,1,0
+US,South Carolina,31,24,22,77.42,1,0
+MU,Plaines Wilhems District,3,2,3,66.67,1,0
+RU,Lipetsk Oblast,5,3,0,60.0,1,0
+IT,Naples,3,1,0,33.33,1,0
+CA,Quebec,402,298,26,74.13,1,0
+SI,Komenda,1,0,0,0.0,1,0
+ES,NULL,97,66,0,68.04,1,0
+AU,Australian Capital Territory,4,2,0,50.0,1,0
+IR,East Azerbaijan Province,10,5,0,50.0,1,0
+LV,Bauskas Novads,1,1,0,100.0,1,0
+EE,Järvamaa,15,13,0,86.67,1,0
+DE,Bavaria,754,453,18,60.08,1,0
+TH,Samut Prakan,1,1,0,100.0,1,0
+SE,Dalarna County,2,0,0,0.0,1,0
+CA,British Columbia,38,20,1,52.63,1,0
+SI,Obcina Krsko,1,1,0,100.0,1,0
+BR,Sao Paulo,1098,660,19,60.11,1,0
+JP,Tokyo,183,92,0,50.27,1,0
+ZA,Mpumalanga,35,31,0,88.57,1,0
+NO,Trøndelag,9296,3466,107,37.28,-1,1
+LV,Aloja,1,1,0,100.0,1,0
+IT,Veneto,40,25,3,62.5,1,0
+CL,Antofagasta,13,7,0,53.85,1,0
+SA,Al Jawf Region,1,1,1,100.0,1,0
+AM,Vayots Dzor,2,1,0,50.0,1,0
+RU,Saratovskaya Oblast,5,2,0,40.0,1,0
+NZ,Canterbury,192,151,2,78.65,1,0
+IN,Gujarat,2046,1520,307,74.29,-1,1
+VN,Ð?k L?k,1,1,0,100.0,1,0
+BR,Amazonas,22,12,5,54.55,1,0
+UA,Poltava Oblast,649,405,3,62.4,1,0
+GM,NULL,1,1,0,100.0,1,0
+SL,North West,2,2,0,100.0,1,0
+AG,NULL,14,9,0,64.29,1,0
+VN,Tinh Quang Binh,4,2,0,50.0,1,0
+BR,Federal District,47,30,0,63.83,1,0
+NO,Vestfold og Telemark,21606,7389,339,34.2,-1,1
+LV,Cesu Novads,2,2,0,100.0,1,0
+NO,NULL,91511,31705,1266,34.65,-1,1
+MD,Orhei,2,2,0,100.0,1,0
+WS,NULL,35,35,0,100.0,1,0
+AR,NULL,1212,1160,45,95.71,-1,1
+TH,Suphanburi,1,1,0,100.0,1,0
+ID,Jakarta,924,697,70,75.43,1,0
+IN,Dadra and Nagar Haveli and Daman and Diu,1,1,0,100.0,1,0
+DE,Lower Saxony,123,71,0,57.72,1,0
+MN,NULL,29,23,0,79.31,1,0
+GE,Samegrelo and Zemo Svaneti,2,2,0,100.0,1,0
+PY,Departamento de Canindeyu,7,3,0,42.86,1,0
+ZM,Copperbelt,3,3,3,100.0,1,0
+MY,NULL,258,157,6,60.85,1,0
+IN,Sikkim,1,1,0,100.0,1,0
+IR,Kurdistan Province,5,2,0,40.0,1,0
+CO,Departamento del Huila,67,35,1,52.24,1,0
+LV,Limbazu novads,1,0,0,0.0,1,0

@@ -1,0 +1,4 @@
+protocol_type,total_sessions,avg_session_duration,avg_failed_logins,detected_attacks,high_risk_sessions,anomaly_flag,is_anomaly
+ICMP,507,769.177441,1.0,209,10,1,0
+TCP,6624,798.475168,1.0,2963,190,-1,1
+UDP,2406,781.936641,1.0,1092,71,1,0
