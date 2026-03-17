@@ -1,6 +1,7 @@
 # ============================================================
 # AI Anomaly Detection on Gold Layer (SQL Server)
 # Isolation Forest | Security Analytics
+
 # ============================================================
 
 import pyodbc
@@ -26,7 +27,7 @@ conn = pyodbc.connect(
     "Trusted_Connection=yes;"
 )
 
-print("✅ Connected to SecurityLogsDW")
+print("Connected to SecurityLogsDW")
 
 # ------------------------------------------------------------
 # 3. LOAD GOLD LAYER TABLES
@@ -53,13 +54,12 @@ def detect_anomalies(df, feature_columns, contamination=0.05):
 
     df["anomaly_flag"] = model.fit_predict(df[feature_columns])
     df["is_anomaly"] = (df["anomaly_flag"] == -1).astype(int)
-
     return df
 
 # ------------------------------------------------------------
 # 5. APPLY AI MODELS
 # ------------------------------------------------------------
-print("🤖 Running anomaly detection...")
+print("Running anomaly detection...")
 
 df_ip = detect_anomalies(
     df_ip,
@@ -91,7 +91,7 @@ df_session = detect_anomalies(
     ]
 )
 
-print("✅ Anomaly detection completed")
+print("Anomaly detection completed")
 
 # ------------------------------------------------------------
 # 6. SAVE RESULTS (FOR REACT + POWER BI)
